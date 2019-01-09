@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block page_title %}
+Enter your details
+{% endblock %}
+{% block main_content %}
+
+  <div class="content__body">
+    <form class="form" action="sign-in.html">
+      <fieldset>
+        <legend class="heading-48" role="heading" aria level="1">Enter your details</legend>
+        <div class="transaction-banner--complete">
+          <p class="bold-small">Your User ID</p>
+          <div id="registration-completed-userid" class="bold-xlarge">762321999600</div>
+        </div>
+        <div class="subsection">
+          <a href="javascript:window.print()" class="print-link">Print your User ID</a>
+        </div>
+        <div class="subsection panel-indent">
+          <div class="bold-small">Your Government Gateway account has been created.</div>
+          <div class="bold-small">You&#x27;ll need your User ID whenever you sign in.</div>
+        </div>
+      </fieldset>
+      <button class="button" role="button">Continue</button>
+    </form>
+  </div>
+
+{% endblock %}
+
+{% block custom_scripts %}
+  <script>
+    function change_link(loc) {
+      $('form.form').attr('action', loc);;
+    }
+  </script>
+{% endblock %}

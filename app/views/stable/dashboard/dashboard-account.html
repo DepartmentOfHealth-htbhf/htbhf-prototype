@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Change your organisation's contact details
+{% endblock %}
+
+{% block main_content %}
+
+  <div class="content__body">
+    <div class="form-group">
+      <a class="link-back back-to-previous" href='#' onclick="goBack()">Back</a>
+    </div>
+    <h1>Change your organisation's contact details</h1>
+    <div class="highlight-message highlight-message--light">
+      <p>You haven't given us an email address for your organisation</p>
+    </div>
+    <table class="table table-font-xsmall">
+      <thead class="table-field-headings">
+        <tr>
+          <th scope="col" class="table-field-heading-first">
+            <span class="visuallyhidden">Setting</span>
+          </th>
+          <th scope="col" class="table-field-heading">
+            <span class="visuallyhidden">Value</span>
+          </th>
+          <th scope="col" class="table-field-heading">
+            <span class="visuallyhidden">Link to change</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="table-row">
+          <td class="table-field-center-aligned ">
+            <div class="">Organisation</div>
+          </td>
+          <td class="table-field-center-aligned ">
+            <div class="">HSBC</div>
+          </td>
+          <td class="table-field-right-aligned">
+            <div class="">
+              <a href="change-email"></a>
+            </div>
+          </td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-field-center-aligned ">
+            <div class="">Email</div>
+          </td>
+          <td class="table-field-center-aligned ">
+            <div class="">-</div>
+          </td>
+          <td class="table-field-right-aligned">
+            <div class="testdiv">
+              <a href="change-email">Update</a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <aside class="sidebar">
+    <div class="section--blue-top sidebar--hidden-sm"></div>
+    <section>
+      <div id="user-name-and-last-login-holder" class="last-login" data-qa="last-login-summary">
+        <h3 id="welcome-text">
+          Welcome, Judy Powell
+        </h3>
+        <p class="last-login__more-details font-xsmall">Last sign in on 5 April 2017</p>
+      </div>
+      <div id="last-login-details" class="last-login-details js-hidden">
+        <section id="last-login-detail" class="alert alert--slim alert--info">
+          <p class="font-xsmall">
+            <a href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/online-services-helpdesk">Contact HMRC</a>
+            if it wasn't you.</p>
+          <a class="minimise js-visible font-xsmall float--none" href="#">Minimise</a>
+        </section>
+      </div>
+      <ul class="section__ul--link-list sidebar__list">
+        <li class="sidebar__list-item font-xsmall">
+          <a href="../dashboard/change-email">Change your contact email</a>
+        </li>
+      </ul>
+    </aside>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,96 @@
+{% block page_title %}
+Choose documents to upload
+{% endblock %}
+
+{% extends "layout.html" %} {% block main_content %}
+
+<div class="content__body">
+  <div id="back">
+    <a class="link-back" href='#'onclick="goBack()">Back</a>
+  </div>
+  <div id="upload-error-message"></div>
+  <!-- <h1 id="page-title" aria-live="assertive">Choose documents to upload</h1> -->
+  <h1 id="page-title">Choose documents to upload</h1>
+  <div id="statusbar-header" style="display:none">
+    <div class="statusbar2 statusbar2-title">
+      <div class="filename2">Your selected files</div>
+      <div class="fileSize">Size</div>
+    </div>
+  </div>
+  <div id="messages"></div>
+  <div id="dragandrop" class="dragDrop dropzone">
+    <form id="uploadForm" method="POST" action="myurl" for="file-input">
+      <label id="file-label" class="form-label fileinput-label" for="file">
+          Drag and drop documents
+        </label>
+      <span class="button--table fileinput-button">
+          <span>Choose documents</span>
+      <input type="hidden" id="_csrf" name="_csrf" class="csrf" value="#csrf_token" />
+      <input tabindex="1" multiple="" id="file" type="file" name="file[]">
+      </span>
+    </form>
+  </div>
+  <details id="upload--restrictions">
+    <summary>Are there any document types that I cannot upload?</summary>
+    <div class="indent">
+      <p>You cannot upload documents that:</p>
+      <ul class="bullets">
+        <li>are larger than 10GB</li>
+        <li>have a filename that ends in .exe</li>
+        <li>are encrypted - you may have used encryption software with the previous version of this service</li>
+      </ul>
+    </div>
+  </details>
+  <div id="table" class="draganddroptable"></div>
+  <div id="summary-header"></div>
+  <div id="summary-table"></div>
+  <div id="progressive-disclosure"></div>
+  <div id="summary-content"></div>
+  <div id="button" class="button__cta-progress"></div>
+
+      <div class="report-error">
+      <script type="text/javascript">
+        var reportProblemAjaxUrl = "/contact/problem_reports_ajax";
+      </script>
+      <a class="report-error__toggle js-visible" id="get-help-action" href="form-label">Get help with this page.</a>
+      <a class="report-error__toggle js-hidden" href="/contact/problem_reports_nonjs">Get help with this page.</a>
+      <div id="report-error-partial-form" class="report-error__content js-hidden">
+        <h2>Get help using this service</h2>
+        <p>Don't include any personal or financial information. For example, your National Insurance or credit card numbers.</p>
+        <form action="/contact/problem_reports_secure" method="POST" id="error-feedback-form" class="form--feedback" novalidate="novalidate">
+          <fieldset>
+            <legend class="visuallyhidden">Get help using this service</legend>
+            <div class="form-group-compound">
+              <label for="report-name" class="form-label">Name</label>
+              <input id="report-name" maxlength="70" class="input--fullwidth form-control" name="report-name" type="text" data-rule-letterswithbasicpunc="true" data-rule-required="true" data-msg-required="Please provide your name." aria-required="true">
+            </div>
+            <div class="form-group-compound">
+              <label for="report-email" class="form-label">Email</label>
+              <input id="report-email" maxlength="255" class="input--fullwidth form-control" name="report-email" type="email" data-rule-required="true" data-rule-email="true" data-msg-required="Please provide your email address." aria-required="true">
+            </div>
+            <div class="form-group-compound">
+              <label for="report-action" class="form-label">What were you doing?</label>
+              <input id="report-action" maxlength="1000" class="input--fullwidth form-control" name="report-action" type="text" data-rule-required="true" data-msg-required="Please enter details of what you were doing." aria-required="true">
+            </div>
+            <div class="form-group-compound">
+              <label for="report-error" class="form-label">What do you need help with?</label>
+              <input id="report-error" maxlength="1000" class="input--fullwidth form-control" name="report-error" type="text" data-rule-required="true" data-msg-required="Please enter details of what went wrong." aria-required="true">
+            </div>
+            <input type="hidden" name="isJavascript" value="true">
+            <input type="hidden" name="referrer" value="https://www.tax.service.gov.uk/gg/sign-in?continue=%2Faccount&amp;origin=unknown">
+            <div class="form-field">
+              <button id="report-submit" class="button" type="submit" data-journey-click="page:Click:Get help with this page Submit">Send</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+
+
+
+
+
+</div>
+
+{% endblock %}

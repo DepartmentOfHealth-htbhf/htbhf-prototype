@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block page_title %}
+Check that you’ve registered
+{% endblock %}
+{% block main_content %}
+
+  <div class="content__body">
+    <h1>Check that you’ve registered</h1>
+    <div>
+      <p>You need to register for the service before you can use it.</p>
+      <div class="form-field form-field--submit">
+        <a href="../dashboard/how-to-enrol" class="button">Register</a>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar">
+    <aside class="govuk-related-items" role="complementary">
+      <h2 class="heading-medium" id="subsection-title">Setting up your account</h2>
+      <p>You also need to create a Government Gateway account if you don’t have one.</p>
+      <nav role="navigation" aria-labelledby="subsection-title">
+        <ul class="font-xsmall">
+          <li>
+            <a href="https://www.tax.service.gov.uk/government-gateway-registration-frontend/choose-your-account?continue=%2Faccount&origin=unknown" target="_blank">Register with Government Gateway</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+{% block page_title %}
+Complete your enrolment
+{% endblock %}
+{% block main_content %}
+
+
+    <div class="content__body">
+      <div id="back">
+    <a class="link-back" href='#'onclick="goBack()">Back</a>
+  </div>
+      <form action="terms.html" class="js-form">
+        <div class="flash error-summary" id="error-summary-display" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+          <h2 id="error-summary-heading" class="h3-heading">There's a problem</h2>
+          <ul class="js-error-summary-messages">
+          </ul>
+        </div>
+
+        <h1 id="page-title">Complete your enrolment</h1>
+
+
+         <div class="form-field-group">
+            <h2>Service reference number</h2>
+            <label class="form-hint">You received this 12-digit number in a welcome email
+              <span class="error-notification" data-input-name="reference"></span>
+              <input type="text" id="reference" name="reference" required pattern="^\d+$" minlength="12" maxlength="12" data-msg-required="Enter a service reference number" data-msg-minlength="The service reference number is too short" data-msg-pattern="The service reference code cannot contain letters or symbols">
+            </label>
+
+          </div>
+          <div class="form-field-group">
+            <h2>Activation code</h2>
+            <label class="form-hint">You received this when you called to enrol for the service
+              <span class="error-notification" data-input-name="activation"></span>
+              <input type="text" id="activation" name="activation" required pattern="^\d+$" minlength="12" maxlength="12" data-msg-required="Enter an activation code" data-msg-minlength="The activation code is too short" data-msg-pattern="The activation code cannot contain letters or symbols">
+            </label>
+          </div>
+
+          <details>
+            <summary>I do not have this information, or my details are not working</summary>
+            <div>
+              <p class="indent">You should <a href="../global/contact-us.html" target="_blank">contact us (opens in a new window or tab).</a></p>
+            </div>
+          </details>
+          <div class="form-field">
+            <input type="submit" class="button" value="Continue">
+          </div>
+        </form>
+        <div class="report-error">
+      <script type="text/javascript">
+        var reportProblemAjaxUrl = "/contact/problem_reports_ajax";
+      </script>
+      <a class="report-error__toggle js-visible" id="get-help-action" href="form-label">Get help with this page.</a>
+      <a class="report-error__toggle js-hidden" href="/contact/problem_reports_nonjs">Get help with this page.</a>
+      <div id="report-error-partial-form" class="report-error__content js-hidden">
+        <h2>Get help using this service</h2>
+        <p>Don't include any personal or financial information. For example, your National Insurance or credit card numbers.</p>
+        <form action="/contact/problem_reports_secure" method="POST" id="error-feedback-form" class="form--feedback" novalidate="novalidate">
+          <fieldset>
+            <legend class="visuallyhidden">Get help using this service</legend>
+            <div class="form-group-compound">
+              <label for="report-name" class="form-label">Name</label>
+              <input id="report-name" maxlength="70" class="input--fullwidth form-control" name="report-name" type="text" data-rule-letterswithbasicpunc="true" data-rule-required="true" data-msg-required="Please provide your name." aria-required="true">
+            </div>
+            <div class="form-group-compound">
+              <label for="report-email" class="form-label">Email</label>
+              <input id="report-email" maxlength="255" class="input--fullwidth form-control" name="report-email" type="email" data-rule-required="true" data-rule-email="true" data-msg-required="Please provide your email address." aria-required="true">
+            </div>
+            <div class="form-group-compound">
+              <label for="report-action" class="form-label">What were you doing?</label>
+              <input id="report-action" maxlength="1000" class="input--fullwidth form-control" name="report-action" type="text" data-rule-required="true" data-msg-required="Please enter details of what you were doing." aria-required="true">
+            </div>
+            <div class="form-group-compound">
+              <label for="report-error" class="form-label">What do you need help with?</label>
+              <input id="report-error" maxlength="1000" class="input--fullwidth form-control" name="report-error" type="text" data-rule-required="true" data-msg-required="Please enter details of what went wrong." aria-required="true">
+            </div>
+            <input type="hidden" name="isJavascript" value="true">
+            <input type="hidden" name="referrer" value="https://www.tax.service.gov.uk/gg/sign-in?continue=%2Faccount&amp;origin=unknown">
+            <div class="form-field">
+              <button id="report-submit" class="button" type="submit" data-journey-click="page:Click:Get help with this page Submit">Send</button>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    </div>
+
+
+
+{% endblock %}

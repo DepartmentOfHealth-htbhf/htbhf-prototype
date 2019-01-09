@@ -1,0 +1,76 @@
+{% extends "layout.html" %} {% block page_title %} Accept the terms and conditions {% endblock %} {% block main_content %}
+
+
+<div class="content__body">
+  <div id="back">
+    <a class="link-back" href='#' onclick="goBack()">Back</a>
+  </div>
+  <form action="email.html" class="js-form">
+    <div class="flash error-summary" id="error-summary-display" role="alert" aria-labelledby="error-summary-heading" tabindex="-1">
+      <h2 id="error-summary-heading" class="h3-heading">There's a problem</h2>
+      <ul class="js-error-summary-messages">
+      </ul>
+    </div>
+    <h1 id="page-title">Accept the terms and conditions</h1>
+    <p>Your organisation must agree to the <a href="../global/terms-and-conditions.html" target="_blank">terms and conditions (opens in a new tab).</a>
+    </p>
+    <p>You must have permission from your organisation to accept the terms. If you’re in doubt, show them to someone who does.
+    </p><br>
+
+    <div class="form-field-group">
+      <span class="error-notification" data-input-name="reference"></span>
+      <div class="multiple-choice">
+        <input id="checkbox-telephone-number" name="contact-by-text-phone" type="checkbox" value="true" required data-msg-required="Your organisation must agree to the terms and conditions">
+        <label for="checkbox-telephone-number">My organisation agrees to the terms and conditions</label>
+      </div>
+    </div>
+    <br>
+    <details>
+      <summary>What if my organisation cannot agree to the terms and conditions?</summary>
+      <div>
+        <p class="indent">You should <a href="../global/contact-us.html" target="_blank">contact us (opens in a new tab).</a></p>
+      </div>
+    </details>
+    <input type="submit" class="button" value="Continue">
+  </form>
+  <div class="report-error">
+    <script type="text/javascript">
+      var reportProblemAjaxUrl = "/contact/problem_reports_ajax";
+    </script>
+    <a class="report-error__toggle js-visible" id="get-help-action" href="form-label">Get help with this page.</a>
+    <a class="report-error__toggle js-hidden" href="/contact/problem_reports_nonjs">Get help with this page.</a>
+    <div id="report-error-partial-form" class="report-error__content js-hidden">
+      <h2>Get help using this service</h2>
+      <p>Don't include any personal or financial information. For example, your National Insurance or credit card numbers.</p>
+      <form action="/contact/problem_reports_secure" method="POST" id="error-feedback-form" class="form--feedback" novalidate="novalidate">
+        <fieldset>
+          <legend class="visuallyhidden">Get help using this service</legend>
+          <div class="form-group-compound">
+            <label for="report-name" class="form-label">Name</label>
+            <input id="report-name" maxlength="70" class="input--fullwidth form-control" name="report-name" type="text" data-rule-letterswithbasicpunc="true" data-rule-required="true" data-msg-required="Please provide your name." aria-required="true">
+          </div>
+          <div class="form-group-compound">
+            <label for="report-email" class="form-label">Email</label>
+            <input id="report-email" maxlength="255" class="input--fullwidth form-control" name="report-email" type="email" data-rule-required="true" data-rule-email="true" data-msg-required="Please provide your email address." aria-required="true">
+          </div>
+          <div class="form-group-compound">
+            <label for="report-action" class="form-label">What were you doing?</label>
+            <input id="report-action" maxlength="1000" class="input--fullwidth form-control" name="report-action" type="text" data-rule-required="true" data-msg-required="Please enter details of what you were doing." aria-required="true">
+          </div>
+          <div class="form-group-compound">
+            <label for="report-error" class="form-label">What do you need help with?</label>
+            <input id="report-error" maxlength="1000" class="input--fullwidth form-control" name="report-error" type="text" data-rule-required="true" data-msg-required="Please enter details of what went wrong." aria-required="true">
+          </div>
+          <input type="hidden" name="isJavascript" value="true">
+          <input type="hidden" name="referrer" value="https://www.tax.service.gov.uk/gg/sign-in?continue=%2Faccount&amp;origin=unknown">
+          <div class="form-field">
+            <button id="report-submit" class="button" type="submit" data-journey-click="page:Click:Get help with this page Submit">Send</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}

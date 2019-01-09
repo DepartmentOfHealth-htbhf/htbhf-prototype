@@ -1,0 +1,311 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Edit contact details
+{% endblock %}
+
+{% block main_content %}
+
+  <div class="content__body">
+    <div class="form-group">
+      <a class="link-back back-to-previous dash-link" href="dashboard">Customs home</a>
+    </div>
+    <h1>Edit contact details</h1>
+    <section class="manage-acct__section main__section--divider-top" id="contact-details">
+      <div id="latency-warning" class="highlight-message highlight-message--light highlight-message--full-width">
+        <p>Any updates to your contact details take up to 2 days to appear on this site</p>
+      </div>
+      <div data-tabs class="js-hash-selected-tab">
+        <ul class="tabs-nav flush--bottom flush--top js-visible" role="tablist">
+          <li id="tab-address" role="tab" aria-selected="true" aria-controls="content-address" tabindex="0" data-tab-link="address" data-journey-click="ManageAccount:AddressTab:click">
+            <span class="tabs-nav__tab tabs-nav__tab--active font-xsmall" href="#address">Address</span>
+          </li>
+          <li id="tab-name" role="tab" aria-selected="true" aria-controls="content-name" tabindex="0" data-tab-link="name" data-journey-click="ManageAccount:NameTab:click">
+            <a class="tabs-nav__tab font-xsmall" href="#name">Name</a>
+          </li>
+          <li id="tab-phone" role="tab" aria-selected="true" aria-controls="content-phone" tabindex="0" data-tab-link="phone" data-journey-click="ManageAccount:PhoneTab:click">
+            <a class="tabs-nav__tab font-xsmall" href="#phone">Phone</a>
+          </li>
+          <li id="tab-email" role="tab" aria-selected="true" aria-controls="content-email" tabindex="0" data-tab-link="email" data-journey-click="ManageAccount:EmailTab:click">
+            <a class="tabs-nav__tab font-xsmall" href="#email">Email</a>
+          </li>
+          <li id="tab-agent" role="tab" aria-selected="true" aria-controls="content-agent" tabindex="0" data-tab-link="agent" data-journey-click="ManageAccount:AccountAgentTab:click">
+            <a class="tabs-nav__tab font-xsmall" href="#agent">Agent</a>
+          </li>
+        </ul>
+        <ul class="flush--top flush--bottom font-xsmall">
+          <li id="content-address" class="tab-content flush--top" data-tab-content="address" role="tabpanel" aria-labelledby="tab-address">
+            <div data-tab-content="address">
+              <div class="js-hidden">
+                <h3>Address</h3>
+              </div>
+              <div id="epaye-address-container" class="tabular-data__tab-content">
+                <div class="tabular-data__entry bold-xsmall hard--bottom">Customs registration</div>
+                <div class="tabular-data__entry">
+                  <span class="tabular-data__heading tabular-data__cell--centred">Business Address</span>
+                  <ul id="epaye-business-address" class="tabular-data__data-1">
+                    <li class="font-xsmall">55 Fordham Road</li>
+                    <li class="font-xsmall">London</li>
+                    <li class="font-xsmall">NE1 4TY</li>
+                  </ul>
+                  <a
+                    id="epaye-add-or-change-business-address"
+                    class="tabular-data__data-2 tabular-data__cell--centred"
+                    data-sso="client"
+                    data-journey-click="ManageAccountEPAYEAddressBusiness:click:Change"
+                    href="https://online.hmrc.gov.uk/contact/paye/120/KB31999/address/main?function=postcodesearch&amp;action=change">Change</a>
+                </div>
+                <div class="tabular-data__entry tabular-data__entry--grouped">
+                  <span class="tabular-data__heading tabular-data__cell--centred">Communication name</span>
+                  <span id="epaye-communication-name" class="tabular-data__data-1">Ian Blake</span>
+                  <a
+                    id="epaye-add-or-change-communication-name"
+                    class="tabular-data__data-2 tabular-data__cell--centred"
+                    data-sso="client"
+                    data-journey-click="ManageAccountEPAYENameCommunication:click:Change"
+                    href="https://online.hmrc.gov.uk/contact/paye/120/KB31999/name/comms?function=input&amp;action=change">Change</a>
+                </div>
+                <div class="tabular-data__entry tabular-data__entry--grouped">
+                  <span class="tabular-data__heading tabular-data__cell--centred">Communication address</span>
+                  <ul id="epaye-communication-address" class="tabular-data__data-1">
+                    <li class="font-xsmall">123 Accountants</li>
+                    <li class="font-xsmall">94 Finchley Aveue</li>
+                    <li class="font-xsmall">London</li>
+                    <li class="font-xsmall">NE1 7JS</li>
+                  </ul>
+                  <a
+                    id="epaye-add-or-change-communication-address"
+                    class="tabular-data__data-2 tabular-data__cell--centred"
+                    data-sso="client"
+                    data-journey-click="ManageAccountEPAYEAddressCommunication:click:Add"
+                    href="https://online.hmrc.gov.uk/contact/paye/120/KB31999/address/comms?function=postcodesearch&amp;action=add">Change</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li id="content-name" class="tab-content flush--top" data-tab-content="name" role="tabpanel" aria-labelledby="tab-name">
+            <div data-tab-content="name">
+              <div class="js-hidden">
+                <h3>Name</h3>
+              </div>
+              <div id="epaye-name-container" class="tabular-data__tab-content">
+                <div class="tabular-data__entry bold-xsmall hard--bottom">Customs registration</div>
+                <div class="tabular-data__entry">
+                  <span class="tabular-data__heading">Business name</span>
+                  <span id="epaye-business-name" class="tabular-data__data-1">ABC LIMITED</span>
+                  <a id="epaye-change-business-name" class="tabular-data__data-2" data-journey-click="ManageAccountEPAYENameBusiness:click:Change" href="/business-account/manage-account/epaye-change-business-name">Change</a>
+                </div>
+                <div class="tabular-data__entry">
+                  <span class="tabular-data__heading">Trading name</span>
+                  <a id="epaye-view-trading-name" class="tabular-data__data-1" data-journey-click="ManageAccountEPAYENameTrading:click:View" data-sso="client" href="https://online.hmrc.gov.uk/contact/paye/120/KB31999/address">View trading name</a>
+                  <a
+                    id="epaye-add-or-change-trading-name"
+                    class="tabular-data__data-2"
+                    data-sso="client"
+                    data-journey-click="ManageAccountEPAYENameTrading:click:Change"
+                    href="https://online.hmrc.gov.uk/contact/paye/120/KB31999/name/trade?function=input&amp;action=change">Change</a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li id="content-phone" class="tab-content flush--top" data-tab-content="phone" role="tabpanel" aria-labelledby="tab-phone">
+            <div data-tab-content="phone">
+              <div class="js-hidden">
+                <h3>Phone</h3>
+              </div>
+              <div id="epaye-phone-container" class="tabular-data__tab-content">
+                <div class="tabular-data__entry bold-xsmall hard--bottom">Customs registration</div>
+                <div class="tabular-data__entry">
+                  <span class="tabular-data__heading tabular-data__cell--centred">Main</span>
+                  <span id="epaye-main-phone" class="tabular-data__data-1">020 4743 8786</span>
+                  <a
+                    id="epaye-add-or-change-main-phone"
+                    class="tabular-data__data-2"
+                    data-sso="client"
+                    data-journey-click="ManageAccountEPAYEPhoneMain:click:Change"
+                    href="https://online.hmrc.gov.uk/contact/paye/120/KB31999/details/contact/main?function=input&amp;action=change">Change</a>
+                </a>
+              </div>
+              <div class="tabular-data__entry">
+                <span class="tabular-data__heading tabular-data__cell--centred">Communication</span>
+                <span id="epaye-communication-phone" class="tabular-data__data-1">-</span>
+                <a
+                  id="epaye-add-or-change-communication-phone"
+                  class="tabular-data__data-2"
+                  data-sso="client"
+                  data-journey-click="ManageAccountEPAYEPhoneCommunication:click:Add"
+                  href="https://online.hmrc.gov.uk/contact/paye/120/KB31999/details/contact/comms?function=input&amp;action=add">Add
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li id="content-email" class="tab-content flush--top" data-tab-content="email" role="tabpanel" aria-labelledby="tab-email">
+          <div id="emailTab" data-tab-content="email">
+            <div class="js-hidden">
+              <h3>Email</h3>
+            </div>
+            <div id="user-details-email-container" class="tabular-data__tab-content">
+              <div class="tabular-data__entry">
+                <details class="tabular-data__details">
+                  <summary class="underline">
+                    <span class="tabular-data__heading--label" id="user-details-email-details-toggle">Government Gateway</span>
+                  </summary>
+                  <div class="panel-indent font-xsmall">
+                    <span id="user-details-email-details-description">Where we send messages when you register to manage new Customs services, or change your password.</span>
+                  </div>
+                </details>
+                <span id="user-details-email-details-address" class="tabular-data__data-1 tabular-data__data-1--after-details word-wrap">user123@email.com</span>
+                <a id="add-or-change-user-details-email-link" class="tabular-data__data-2 tabular-data__data-2--after-details" href="/business-account/manage-account/government-gateway-warning" data-journey-click="ManageAccountGGEmail:Click:Change">Change</a>
+              </div>
+            </div>
+            <div id="epaye-email-container" class="tabular-data__tab-content">
+              <div class="tabular-data__entry bold-xsmall hard--bottom">Customs registration</div>
+              <div class="tabular-data__entry">
+                <details class="tabular-data__details">
+                  <summary class="underline">
+                    <span class="tabular-data__heading--label" id="epaye-email-message-notifications-toggle">Message notifications</span>
+                  </summary>
+                  <div class="panel-indent font-xsmall">
+                    <p id="epaye-email-message-notifications-description-1">Where we send emails when you have a new Customs message in your account.
+                      <a id="epaye-messages" data-journey-click="ManageAccountEPAYEEmail:click:EPAYEMessages" href="/business-account/epaye/messages">Customs messages</a>
+                      include notices about your EORI, documents and other services we provide.</p>
+                    <p id="epaye-email-message-notifications-description-2">Changing this email will also change your &#x27;Business contact&#x27; address.</p>
+                  </div>
+                </details>
+                <a
+                  id="epaye-view-message-notifications-email"
+                  data-sso="client"
+                  class="tabular-data__data-1 tabular-data__data-1--after-details"
+                  href="https://online.hmrc.gov.uk/contact/paye/120/KB31999/notificationemail"
+                  data-journey-click="ManageAccountEPAYEEmailNotifications:click:ViewOrChange">View email</a>
+                <a
+                  id="epaye-change-message-notifications-email"
+                  data-sso="client"
+                  class="tabular-data__data-2 tabular-data__data-2--after-details"
+                  href="https://online.hmrc.gov.uk/contact/paye/120/KB31999/notificationemail"
+                  data-journey-click="ManageAccountEPAYEEmailNotifications:click:ViewOrChange">Change</a>
+              </div>
+              <div class="tabular-data__entry">
+                <details class="tabular-data__details">
+                  <summary class="underline">
+                    <span class="tabular-data__heading--label" id="epaye-email-rti-submission-toggle">Submission confirmations</span>
+                  </summary>
+                  <div class="panel-indent font-xsmall">
+                    <p id="epaye-email-rti-submission-description-1">We send confirmation emails to your Government Gateway address, when we receive Customs services interactions from you.</p>
+                  </div>
+                </details>
+                <span id="epaye-rti-submission-email" class="tabular-data__data-1 tabular-data__data-1--after-details">sent to your Government Gateway</span>
+                <a
+                  id="epaye-change-rti-submission-email"
+                  class="tabular-data__data-2 tabular-data__data-2--after-details"
+                  href="/business-account/manage-account/government-gateway-warning"
+                  data-journey-click="ManageAccountEPAYEEmailSubmissionsConfirmation:click:Change">Change</a>
+              </div>
+              <div class="tabular-data__entry">
+                <details class="tabular-data__details">
+                  <summary class="underline">
+                    <span class="tabular-data__heading--label" id="epaye-email-business-contact-toggle">Business contact</span>
+                  </summary>
+                  <div class="panel-indent font-xsmall">
+                    <p id="epaye-email-business-contact-description-1">Where we&#x27;ll contact you if we have a question about your Customs registration.</p>
+                  </div>
+                </details>
+                <span id="epaye-business-contact-email" class="tabular-data__data-1 tabular-data__data-1--after-details word-wrap">ian.smith@123accountants.co.uk</span>
+                <a
+                  id="epaye-add-or-change-business-contact-email"
+                  data-sso="client"
+                  class="tabular-data__data-2 tabular-data__data-2--after-details"
+                  href="https://online.hmrc.gov.uk/contact/paye/120/KB31999/details/contact/main?function=input&amp;action=change"
+                  data-journey-click="ManageAccountEPAYEEmailBusinessContact:click:Change">
+                  Change
+                </a>
+              </div>
+              <div class="tabular-data__entry">
+                <details class="tabular-data__details">
+                  <summary class="underline">
+                    <span class="tabular-data__heading--label" id="epaye-email-communication-toggle">Communication</span>
+                  </summary>
+                  <div class="panel-indent font-xsmall">
+                    <p id="epaye-email-communication-description-1">Use this address if someone manages your Customs services for you, eg an agent or specific employee, and you want them to receive your &#x27;Business contact&#x27; emails.</p>
+                  </div>
+                </details>
+                <span id="epaye-communication-email" class="tabular-data__data-1 tabular-data__data-1--after-details word-wrap">-</span>
+                <a
+                  id="epaye-add-or-change-communication-email"
+                  data-sso="client"
+                  class="tabular-data__data-2 tabular-data__data-2--after-details"
+                  href="https://online.hmrc.gov.uk/contact/paye/120/KB31999/details/contact/comms?function=input&amp;action=add"
+                  data-journey-click="ManageAccountEPAYEEmailCommunication:click:Add">
+                  Add
+                </a>
+              </div>
+            </div>
+            <div id="business-tips-email-container" class="tabular-data__tab-content">
+              <div class="tabular-data__entry">
+                <details class="tabular-data__details">
+                  <summary class="underline">
+                    <span class="tabular-data__heading--label" id="email-business-tips-toggle">Business tips</span>
+                  </summary>
+                  <div class="panel-indent font-xsmall">
+                    <span id="email-business-tips-description">Tips and guidance for businesses on managing your taxes.</span>
+                  </div>
+                </details>
+                <a id="view-business-tips-email" class="tabular-data__data-1 tabular-data__data-1--after-details" href="https://public-online.hmrc.gov.uk/business-emails/subscription" data-journey-click="ManageAccountEmailBusinessTips:click:view">View email</a>
+                <a id="change-business-tips-email" class="tabular-data__data-2 tabular-data__data-2--after-details" href="https://public-online.hmrc.gov.uk/business-emails/subscription" data-journey-click="ManageAccountEmailBusinessTips:click:change">Change</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li id="content-agent" class="tab-content flush--top" data-tab-content="agent" role="tabpanel" aria-labelledby="tab-agent">
+          <div data-tab-content="agent">
+            <div class="js-hidden">
+              <h3>Agent</h3>
+            </div>
+            <div id="epaye-agent-container" class="tabular-data__tab-content">
+              <div class="tabular-data__entry bold-xsmall">Customs registration
+                <a id="epaye-add-or-change-agent" class="tabular-data__data-1 tabular-data__data-1--after-details" href="/information/help?helpcategory=paye&helpid=authoriseAgent" data-journey-click="ManageAccountEPAYEAgentOrAccountant:click:AddOrChange">Add or change agent</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+</article>
+</div>
+<aside class="sidebar">
+<div class="section--blue-top sidebar--hidden-sm"></div>
+<section>
+  <div id="user-name-and-last-login-holder" class="last-login" data-qa="last-login-summary">
+    <h3 id="welcome-text">
+      Welcome, Richard Payne
+    </h3>
+    <p class="last-login__more-details font-xsmall">Last sign in on 19 October 2016
+      <a href="#" data-toggle-details="last-login-details">not right?</a>
+    </p>
+  </div>
+  <div id="last-login-details" class="last-login-details js-hidden">
+    <section id="last-login-detail" class="alert alert--slim alert--info">
+      <p class="font-xsmall">
+        <a href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/online-services-helpdesk">Contact HMRC</a>
+        if it wasn't you.</p>
+      <a class="minimise js-visible font-xsmall float--none" href="#">Minimise</a>
+    </section>
+  </div>
+  <ul class="section__ul--link-list sidebar__list">
+    <li class="sidebar__list-item font-xsmall">
+      <a href="#">Messages</a>
+    </li>
+    <li class="sidebar__list-item font-xsmall">
+      <a href="#">Manage account</a>
+    </li>
+    <li class="sidebar__list-item font-xsmall">
+      <a href="#">Help and contact</a>
+    </li>
+  </ul>
+</aside>
+
+</div>
+
+{% endblock %}

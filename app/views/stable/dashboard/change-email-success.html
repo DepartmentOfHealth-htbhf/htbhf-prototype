@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Change your organisation's contact email address
+{% endblock %}
+
+{% block main_content %}
+
+  <div class="content__body">
+    <div class="form-group">
+      <a class="link-back back-to-previous" href='#' onclick="goBack()">Back</a>
+    </div>
+    <h1>Change your organisation's contact email address</h1>
+    <div class="alert alert--success" role="alert">
+      <p class="alert__message">You’ve changed your email address.</p>
+    </div>
+    <ul>
+      <li>
+        <strong>Current email address</strong>
+      </li>
+      <li>taxgrouplist1@hsbc.co.uk</li>
+    </ul><br>
+    <label>
+      <strong>New email address</strong>
+      <input type="email" name="surname" class="form-control form-control--block"/>
+    </label>
+    <div class="form-field form-field--submit">
+      <a href="../dashboard/change-email-success" class="button">Save</a>
+      <a href="dashboard-future" class="button button--link">Back to dashboard</a>
+    </div>
+  </div>
+  <aside class="sidebar">
+    <div class="section--blue-top sidebar--hidden-sm"></div>
+    <section>
+      <div id="user-name-and-last-login-holder" class="last-login" data-qa="last-login-summary">
+        <h3 id="welcome-text">
+          Welcome, Judy Powell
+        </h3>
+        <p class="last-login__more-details font-xsmall">Last sign in on 5 April 2017</p>
+      </div>
+      <div id="last-login-details" class="last-login-details js-hidden">
+        <section id="last-login-detail" class="alert alert--slim alert--info">
+          <p class="font-xsmall">
+            <a href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/online-services-helpdesk">Contact HMRC</a>
+            if it wasn't you.</p>
+          <a class="minimise js-visible font-xsmall float--none" href="#">Minimise</a>
+        </section>
+      </div>
+      <ul class="section__ul--link-list sidebar__list">
+        <li class="sidebar__list-item font-xsmall">
+          <a href="../dashboard/change-email">Change your contact email</a>
+        </li>
+      </ul>
+    </aside>
+  </div>
+
+{% endblock %}

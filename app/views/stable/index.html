@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% block page_title %}
+Prototype 1.2
+{% endblock %}
+{% block content %}
+
+  <main id="content" role="main">
+    <div class="form-group">
+      <a class="link-back back-to-previous" href='#' onclick="goBack()">Back</a>
+    </div>
+    <h1 class="heading-xlarge">Prototype 1.2
+      <span class="heading-secondary">
+        April 2017 to present</span>
+    </h1>
+    <h2 class="heading-large">Summary of changes</h2>
+    <h2 class="heading-medium">Sprint 3-4</h2>
+    <ul class="list-bullet">
+      <li>Complete content review with Greg Tindall (previously no dedicated resource)</li>
+      <li>Inline
+        <a href="dev_baseline/unhappy/dashboard/doc-added-error">error messaging</a>
+        for files of the wrong format or too large</li>
+      <li>New sections created to
+        <a href="dev_baseline/happy/dashboard/dashboard-account">update your organisation's email address</a>
+      </li>
+      <li>Changed functionality of upload area so that files do not automatically upload as per the previous version. Due to the size of the files we wanted to give the user control to select the files first, before confirming their upload.</li>
+      <li>Added a section for
+        <a href="dev_baseline/happy/dashboard/how-to-enrol">user registration</a>
+        with the service. This is actually being built by another team however we wanted to user test as part of the end to end journey.</li>
+    </ul><br>
+    <h2 class="heading-medium">Changes from previous user testing (sprints 1-2)</h2>
+    <ul class="list-bullet">
+      <li>
+        <a href="dev_baseline/happy/gateway/terms?userId=&password=&submitted=yes">Terms and conditions declaration</a>
+        statement with download option</li>
+      <li>Update to displaying the entirety of the
+        <a href="dev_baseline/happy/dashboard/downloads">file name
+        </a>which previouly used HTML ellipsis, cutting off most of the characters. User testing showed that users are familiar with the format of the file and can instantly recognise what the file contains, if they can see the whole thing.</li>
+      <br>
+    </ul>
+    <div class="form-field">
+      <a href="dev_baseline/happy/start-page" class="button" style="margin-bottom:20px;">Start journey</a>
+    </div>
+    <hr>
+    <h2 class="heading-large">All pages</h2>
+    <p>This prototype covers all delivery board tickets for sprints 3 - 6</p>
+    <ul class="bullets">
+      <li>
+        <a class="h3-heading" href="dev_baseline/happy/start-page">SDES start page</a>
+      </li>
+      <li>
+        <a class="h3-heading" href="dev_baseline/happy/gateway/gg-sign-in">Sign in with GG credentials</a>
+      </li>
+      <li>
+        <a class="h3-heading" href="dev_baseline/happy/dashboard/sign-out-survey">Sign out with feedback form</a>
+      </li>
+      <li>
+        <a class="h3-heading" href="dev_baseline/happy/gateway/terms?userId=&password=&submitted=yes">Ts &amp; C's declaration</a>
+      </li>
+      <li>
+        <a class="h3-heading" href="dev_baseline/appy/gateway/terms-disagree">User doesn't accept Ts &amp; C's feedback form</a>
+      </li>
+      <li>
+        <a class="h3-heading" href="dev_baseline/happy/dashboard/dashboard-future">Empty uploads dashboard</a>
+      </li>
+      <li>
+        <a class="h3-heading" href="dev_baseline/happy/dashboard/doc-added">Uploads page with drag and drop</a>
+      </li>
+      <li>
+        <a class="h3-heading" href="dev_baseline/happy/dashboard/doc-added-error">Check for errors - unhappy</a>
+      </li>
+      <li>
+        <a class="h3-heading" href="dev_baseline/happy/dashboard/doc-upload">Check for errors - happy</a>
+      </li>
+      <li>
+        <a class="h3-heading" href="dev_baseline/happy/dashboard/dashboard-future-dec">Updated uploads area on dashboard</a>
+      </li>
+      <li>
+        <a class="h3-heading" href="dev_baseline/happy/dashboard/dashboard-account">Manage org contact details</a>
+      </li>
+      <li>
+        <a class="h3-heading" href="dev_baseline/happy/dashboard/change-email">Change/add new org email address</a>
+      </li>
+      <p>Referred to
+        <a href="https://www.gov.uk/service-manual/design/email-addresses" target="blank">service manual standard for email</a>, providing enough info for user to give us the correct email address, which is integral to them understanding when a download is due to expire</p>
+      <li>
+        <a class="h3-heading" href="dev_baseline/happy/dashboard/change-email-success">Successfully changed org email address</a>
+      </li>
+      <li>
+        <a class="h3-heading" href="dev_baseline/happy/dashboard/how-to-enrol">Instructions on how to enrol with SDES</a>
+      </li>
+      <li>
+        <a class="h3-heading" href="dev_baseline/happy/gateway/sdes-enrol">User is ready to add enrolment credentials</a>
+      </li>
+      <li>
+        <a class="h3-heading" href="dev_baseline/happy/error/error_unauth">User is not enrolled, but has GG credentials</a>
+      </li>
+      <li>
+        <a class="h3-heading" href="dev_baseline/happy/error/error_sys_unavail">Error: something has gone wrong</a>
+      </li>
+      <li>
+        <a class="h3-heading" href="dev_baseline/happy/dashboard/downloads">View all your downloads</a>
+      </li>
+    </ul>
+  </main>
+
+{% endblock %}
