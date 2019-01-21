@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Which of the following describes you best?
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+   <a class="govuk-back-link" href="which-user">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">What is your name?</h1>
+      <p>Tell us your full legal name as it appears on your passport or other benefit claims.</p>
+
+      <form class="form" action="national-insurance-number" method="post">
+
+        <div class="govuk-form-group">
+  <label class="govuk-label" for="first-name">
+    First or given name
+  </label>
+  <input class="govuk-input" id="first-name" name="first-name" type="text">
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="last-name">
+    Last or family name
+  </label>
+  <input class="govuk-input" id="last-name" name="last-name" type="text">
+</div>
+
+
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
