@@ -52,7 +52,7 @@ router.get('/examples/template-data', function (req, res) {
   res.render('examples/template-data', { 'name': 'Foo' })
 })
 
-// Branching
+// Branching original
 router.post('/examples/branching/over-18-answer', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
@@ -66,6 +66,8 @@ router.post('/examples/branching/over-18-answer', function (req, res) {
     res.redirect('/docs/examples/branching/over-18')
   }
 })
+
+
 
 module.exports = router
 
