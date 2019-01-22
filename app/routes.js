@@ -33,6 +33,20 @@ router.post('/apply/pregnant-answer', function (req, res) {
   }
 })
 
+// Live with a partner Branching 
+router.post('/apply/live-with-partner-answer', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let partneryes = req.session.data['live-with-partner']
+
+  if (partneryes === 'false') {
+    res.redirect('/apply/card-address')
+  } else {
+    res.redirect('/apply/partner-name')
+  }
+})
 
 
 module.exports = router
