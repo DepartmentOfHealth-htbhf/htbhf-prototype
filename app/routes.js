@@ -42,7 +42,7 @@ router.post('/apply/live-with-partner-answer', function (req, res) {
   let partneryes = req.session.data['live-with-partner']
 
   if (partneryes === 'false') {
-    res.redirect('/apply/card-address')
+    res.redirect('/apply/manual-card-address')
   } else {
     res.redirect('/apply/partner-name')
   }
