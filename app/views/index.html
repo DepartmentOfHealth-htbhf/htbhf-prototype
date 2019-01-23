@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Apply for Healthy Start food, milk and vitamin vouchers start page
+  Prototype index
 {% endblock %}
 
 {% block header %}
@@ -21,99 +21,37 @@
 {% endblock %}
 
 {% block content %}
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        {% if serviceName %} {{ serviceName }} {% endif %}
+        Prototype iterations
       </h1>
 
-      <p>You can apply for the Healthy Start scheme if either:</p>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>you are at least 10 weeks pregnant</li>
-        <li>you have at least 1 child under 4 years old</li>
-      </ul>
+      <h2 class="govuk-heading-l">Private Beta</h2>
+       <span class="govuk-caption-l">Sprint Iteration 3</span>
+      <h3 class="govuk-heading-m">24 Jan - 06 Feb 2019 </h3>
 
-      <p>You must also be receiving at least one of the following benefits:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>Income Support</li>
-        <li>Income-based Jobseeker’s Allowance</li>
-        <li>Child Tax Credit (but only if your family’s annual income is £16,190 or less)</li>
-        <li>Universal Credit (but only if your family earns £408 or less from employment)</li>
-        <li>Income-related Employment and Support Allowance</li>
-        <li>Working Tax Credit (but only if your family is receiving the 4 week ‘run-on’ payment you receive for a further 4 weeks immediately after you stop qualifying for <a href="https://www.gov.uk/working-tax-credit">Working Tax Credit</a>)</li>
-      </ul>
-
-      <p>You will also be eligible for the Healthy Start scheme if you are pregnant and under 18, even if you do not receive any benefits.</p>
-
-      <p>If you are under 16 your parent, guardian or carer must apply for you.</p>
-
-      <p>This scheme is only available if you live in England, Wales or Northern Ireland. If you live in Scotland, visit the <a href="https://www.gov.scot/policies/maternal-and-child-health/">Scottish Government website for information</a>.</p>
-
-      <p>Applying takes around 5 minutes. We will tell you if you are eligible for Healthy Start vouchers straight away.</p>
-
-      <a href="apply/which-user " role="button" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">Start now</a>
-
-      <h2 class="govuk-heading-m">Before you start</h2>
-
-      <p>You can also register by calling the Healthy Start helpline on 0345 607 6823. You can <a href="https://www.gov.uk/call-charges">find call charge information on GOV.UK</a>.</p>
-
-      <p>To apply online or by telephone you will need your:</p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>full name</li>
-        <li>date of birth</li>
-        <li>National Insurance number</li>
-        <li>baby’s due date (if you are pregnant)</li>
-        <li>postal address</li>
-      </ul>
-
-      <p>If you live with a partner, you will also need your partner’s:</p>
-
-       <ul class="govuk-list govuk-list--bullet">
-        <li>full name</li>
-        <li>date of birth</li>
-        <li>National Insurance number </li>
-      </ul>
-
-      <p>Your details must match the information you gave us when you applied for any other benefits.</p>
-
-      <p>If you do not have a National Insurance number, please <a href=”https://www.gov.uk/lost-national-insurance-number”>visit this GOV.UK help page</a>.</p>
-
-      <p>The online service is also available in <a href="#">Welsh (Cymraeg)</a>.</p>
-
-      <p>You can’t register for this service if you’re in the UK illegally.</p>
-
-    </div>
-
-    <div class="govuk-grid-column-one-third">
-
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          Subsection
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="#">
-                Related link
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Related link
-              </a>
-            </li>
-            <li>
-              <a href="#" class="govuk-!-font-weight-bold">
-                More <span class="govuk-visually-hidden">in Subsection</span>
-              </a>
-            </li>
+          <ul class="govuk-list govuk-list--bullet govuk-heading-m">
+            <li><a href="apply/start-page"> Apply v1.1 - New user, successful application</a></li>
           </ul>
-        </nav>
-      </aside>
+          <p>Untested prototype, due for first round 5-6th Feb 2019</p>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+     <h2 class="govuk-heading-l">Alpha</h2>
+          <ul class="govuk-list govuk-list--bullet govuk-heading-m">
+            <li><a href="https://healthy-start-application.herokuapp.com/overview?record=existinge"> Apply - Existing user</a></li>
+            <li><a href="https://healthy-start-application.herokuapp.com/overview"> Apply - New user</a></li>
+          </ul>
+          <p>Iterations created by Pilotworks. Username and password required for access</p>
+              
+
 
     </div>
+
   </div>
 {% endblock %}
