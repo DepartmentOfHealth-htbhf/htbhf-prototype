@@ -29,6 +29,21 @@ router.post('/apply/live-with-partner-answer', function (req, res) {
   if (partneryes === 'false') {
     res.redirect('/apply/manual-card-address')
   } else {
+    res.redirect('/apply/does-partner-have-nino')
+  }
+})
+
+// Partner has a NINO Branching 
+router.post('/apply/partner-nino-answer', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let partnernino = req.session.data['partner-nino']
+
+  if (partnernino === 'false') {
+    res.redirect('/apply/manual-card-address')
+  } else {
     res.redirect('/apply/partner-name')
   }
 })
