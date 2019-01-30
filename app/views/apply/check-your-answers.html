@@ -36,28 +36,27 @@
       <dl class="app-check-your-answers app-check-your-answers--short">
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Name
+            Your name
           </dt>
           <dd class="app-check-your-answers__answer">
-            Sarah Philips
+            {{ data['first-name'] }} {{ data['last-name'] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
+            <a href="what-is-your-name">
+              Change<span class="govuk-visually-hidden"> first name</span>
             </a>
           </dd>
         </div>
-
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             National Insurance number
           </dt>
           <dd class="app-check-your-answers__answer">
-            QQ 12 34 56 C
+            {{ data['national-insurance-number'] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="#">
+            <a href="national-insurance-number">
               Change<span class="govuk-visually-hidden"> national insurance number</span>
             </a>
           </dd>
@@ -68,10 +67,10 @@
             Date of birth
           </dt>
           <dd class="app-check-your-answers__answer">
-            5 January 1998
+            {{ data['dob-day'] }} {{ data['dob-month'] }} {{ data['dob-year'] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="#">
+            <a href="date-of-birth">
               Change<span class="govuk-visually-hidden"> date of birth</span>
             </a>
           </dd>
@@ -82,10 +81,10 @@
             Are you pregnant?
           </dt>
           <dd class="app-check-your-answers__answer">
-           Yes
+           {{ data['pregnant'] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="#">
+            <a href="are-you-pregnant">
               Change<span class="govuk-visually-hidden"> date of birth</span>
             </a>
           </dd>
@@ -96,10 +95,10 @@
             Baby's due date
           </dt>
           <dd class="app-check-your-answers__answer">
-            12 March 2019
+            {{ data['pregnant-dob-day'] }} {{ data['pregnant-dob-month'] }} {{ data['pregnant-dob-year'] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="#">
+            <a href="are-you-pregnant">
               Change<span class="govuk-visually-hidden"> baby due date</span>
             </a>
           </dd>
@@ -110,12 +109,13 @@
             Address
           </dt>
           <dd class="app-check-your-answers__answer">
-            72 Guild Street<br />
-            London<br />
-            SE23 6FH
+            {{ data['address-line-1'] }}<br />
+            {{ data['address-line-2'] }}<br />
+            {{ data['address-town'] }}<br />
+            {{ data['address-postcode'] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="#">
+            <a href="manual-card-address">
               Change<span class="govuk-visually-hidden"> address</span>
             </a>
           </dd>
@@ -129,14 +129,28 @@
        <dl class="app-check-your-answers app-check-your-answers--short">
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Name
+            Do you live with a partner?
           </dt>
           <dd class="app-check-your-answers__answer">
-            Sarah Philips
+             {{ data['live-with-partner'] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="#">
-              Change<span class="govuk-visually-hidden"> name</span>
+            <a href="live-with-partner">
+              Change<span class="govuk-visually-hidden"> live with partner</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Partner's name
+          </dt>
+          <dd class="app-check-your-answers__answer">
+             {{ data['partner-first-name'] }} {{ data['partner-last-name'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="partner-name">
+              Change<span class="govuk-visually-hidden"> partners name</span>
             </a>
           </dd>
         </div>
@@ -147,11 +161,11 @@
             National Insurance number
           </dt>
           <dd class="app-check-your-answers__answer">
-            QQ 12 34 56 C
+            {{ data['partner-nino'] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="#">
-              Change<span class="govuk-visually-hidden"> national insurance number</span>
+            <a href="does-partner-have-nino">
+              Change<span class="govuk-visually-hidden">partners national insurance number</span>
             </a>
           </dd>
         </div>
@@ -161,10 +175,10 @@
             Date of birth
           </dt>
           <dd class="app-check-your-answers__answer">
-            5 January 1998
+            {{ data['partner-dob-day'] }} {{ data['partner-dob-month'] }} {{ data['partner-dob-year'] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="#">
+            <a href="partner-date-of-birth">
               Change<span class="govuk-visually-hidden"> date of birth</span>
             </a>
           </dd>

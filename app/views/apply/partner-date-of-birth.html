@@ -27,38 +27,38 @@
       <form class="form" action="manual-card-address" method="post">
 
    <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+  <fieldset class="govuk-fieldset" aria-describedby="partner-dob-hint" role="group">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
         What is your partner's date of birth?
       </h1>
     </legend>
-    <span id="dob-hint" class="govuk-hint">
+    <span id="partner-dob-hint" class="govuk-hint">
       For example, 31 3 1990
     </span>
-    <div class="govuk-date-input" id="dob">
+    <div class="govuk-date-input" id="partner-dob">
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="dob-day">
+          <label class="govuk-label govuk-date-input__label" for="partner-dob-day"/>
             Day
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="partner-dob-day" name="partner-dob-day" type="number" pattern="[0-9]*" value="{{ data['partner-dob-day'] }}"/>
         </div>
       </div>
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="dob-month">
+          <label class="govuk-label govuk-date-input__label" for="partner-dob-month"/>
             Month
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="partner-dob-month" name="partner-dob-month" type="number" pattern="[0-9]*" value="{{ data['partner-dob-month'] }}"/>
         </div>
       </div>
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="dob-year">
+          <label class="govuk-label govuk-date-input__label" for="partner-dob-year">
             Year
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*">
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="partner-dob-year" name="partner-dob-year" type="number" pattern="[0-9]*" value="{{ data['partner-dob-year'] }}"/>
         </div>
       </div>
     </div>

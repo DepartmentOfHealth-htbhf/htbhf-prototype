@@ -56,43 +56,6 @@ router.get('/apply/check-your-answers', function (req, res) {
   res.render('apply/check-your-answers',{CheckAnswers})
 })
 
-// JUGGLING
-
-router.post('/juggling-licence/juggling-balls-answer', function (req, res) {
-
-  // Make a variable and give it the value from 'juggling-balls'
-  var jugglingBalls = req.session.data['juggling-balls']
-
-  // Check whether the variable matches a condition
-  if (jugglingBalls == "3 or more"){
-    // Send user to next page
-    res.redirect('/juggling-licence/juggling-trick')
-  }
-  else {
-    // Send user to ineligible page
-    res.redirect('/juggling-licence/ineligible')
-  }
-
-})
-
-// Live with partner
-
-router.post('/juggling-licence/juggling-balls-answer', function (req, res) {
-
-  // Make a variable and give it the value from 'juggling-balls'
-  var jugglingBalls = req.session.data['juggling-balls']
-
-  // Check whether the variable matches a condition
-  if (jugglingBalls == "3 or more"){
-    // Send user to next page
-    res.redirect('/juggling-licence/juggling-trick')
-  }
-  else {
-    // Send user to ineligible page
-    res.redirect('/juggling-licence/ineligible')
-  }
-
-})
 
 
 module.exports = router

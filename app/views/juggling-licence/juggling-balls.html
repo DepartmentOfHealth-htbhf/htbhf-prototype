@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What is your National Insurance Number?
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+   <a class="govuk-back-link" href="start-page">Back</a>
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        How many balls can you juggle?
+      </h1>
+    </legend>
+     <form action="/juggling-licence/juggling-balls-answer" method="post" class="form">
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="juggling-balls" name="juggling-balls" type="radio" value="3 or more" {{ checked("juggling-balls", "3 or more") }}>
+        <label class="govuk-label govuk-radios__label" for="juggling-balls">
+          3 or more
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="juggling-balls" name="juggling-balls" type="radio" value="1 or 2" {{ checked("juggling-balls", "1 or 2") }}>
+        <label class="govuk-label govuk-radios__label" for="juggling-balls">
+          1 or 2
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="juggling-balls" name="juggling-balls" type="radio" value="None - I cannot juggle" {{ checked("juggling-balls", "None - I cannot juggle") }}>
+        <label class="govuk-label govuk-radios__label" for="juggling-balls">
+          None - I cannot juggle
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+<button class="govuk-button">Continue</button>
+
+      </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}
