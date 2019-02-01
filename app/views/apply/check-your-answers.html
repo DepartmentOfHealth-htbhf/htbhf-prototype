@@ -28,7 +28,6 @@
       <h2 class="govuk-heading-m">
         About you
       </h2>
-
       <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
       <!--   * `app-check-your-answers--short` for short questions -->
       <!--   * `app-check-your-answers__questions-long` for long questions -->
@@ -90,6 +89,7 @@
           </dd>
         </div>
 
+{% if data['pregnant'] === 'Yes' %}
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Baby's due date
@@ -103,6 +103,7 @@
             </a>
           </dd>
         </div>
+{% endif %}
 
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
@@ -122,7 +123,7 @@
         </div>
       </dl>
 
-       <h2 class="govuk-heading-m">
+      <h2 class="govuk-heading-m">
         About your partner
       </h2>
 
@@ -140,7 +141,9 @@
             </a>
           </dd>
         </div>
+         
 
+        {% if data['live-with-partner'] === 'Yes' %}
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Partner's name
@@ -161,7 +164,7 @@
             National Insurance number
           </dt>
           <dd class="app-check-your-answers__answer">
-            {{ data['nino-type'] }}
+            {{ data['nino-type'] if data['partner-nino'] === 'Yes' else data['partner-nino'] }}
           </dd>
           <dd class="app-check-your-answers__change">
             <a href="does-partner-have-nino">
@@ -183,7 +186,9 @@
             </a>
           </dd>
         </div>
+        {% endif %}
       </dl>
+      
 
 
       <h2 class="govuk-heading-m">Now send your application</h2>
