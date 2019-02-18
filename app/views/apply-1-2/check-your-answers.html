@@ -49,28 +49,28 @@
 
          <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Are you pregnant?
+            Describe yourself
           </dt>
           <dd class="app-check-your-answers__answer">
-           {{ data['pregnant'] }}
+           {{ data['describe-yourself'] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="are-you-pregnant">
+            <a href="describe-yourself">
               Change<span class="govuk-visually-hidden"> date of birth</span>
             </a>
           </dd>
         </div>
 
-{% if data['pregnant'] === 'Yes' %}
+{% if (data['describe-yourself'] === 'I am more than 10 weeks pregnant') or (data['describe-yourself'] === 'I am more than 10 weeks pregnant and I have one or more children under the age of 4') %}
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
             Baby's due date
           </dt>
           <dd class="app-check-your-answers__answer">
-            {{ data['pregnant-dob-day'] }} {{ data['pregnant-dob-month'] }} {{ data['pregnant-dob-year'] }}
+            {{ data['due-day'] }} {{ data['due-month'] }} {{ data['due-year'] }}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="are-you-pregnant">
+            <a href="due-date">
               Change<span class="govuk-visually-hidden"> baby due date</span>
             </a>
           </dd>
