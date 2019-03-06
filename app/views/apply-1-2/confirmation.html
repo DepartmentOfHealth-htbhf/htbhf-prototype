@@ -13,46 +13,31 @@
     <div class="govuk-grid-column-two-thirds">
 
       <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">Application complete</h1>
+        <h1 class="govuk-panel__title">Your application is complete</h1>
         <div class="govuk-panel__body">
-          You are entitled to<br><strong>£6.20</strong> per week
+          You are entitled to<br><strong>£3.10</strong> per week
         </div>
       </div>
 
-       <p>
-        Download, print or email a copy of this page to keep.
-      </p>
+      {% from "warning-text/macro.njk" import govukWarningText %}
 
-       <p>You are entitled to get money from this scheme because you:</p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>are over 18</li>
-        <li>{{ data['describe-yourself'] }}</li>
-        <li>receiving child tax credit</li>
-      </ul>
-
-
-<details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      What if this information is wrong?
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    <p>If any of this information is wrong, you must <a class="govuk-link" href="https://www.gov.uk/report-benefits-change-circumstances" target="_blank">contact the Department for Work and Pensions (link opens in a new tab)</a> to update it.</p>
-    <p> If you get Child Tax Credit, you must <a class="govuk-link" href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/tax-credits-enquiries" target="_blank">contact HMRC (link opens in a new tab)</a> to update your information instead.</p>
-    <p>This might change how much money you will get from this scheme.</p>
-  </div>
-
-
-</details>
-
+        {{ govukWarningText({
+        text: "Download, print or email yourself a copy of this page to keep.",
+        iconFallbackText: "Warning"
+        }) }}
       
 
       <h2 class="govuk-heading-m">What happens next</h2>
-      <p>We will send your prepaid card to the address you gave us. We will add money to your card every 4 weeks so that you can buy healthy food and milk.</p>
-      <p>You will get £24.80 every 4 weeks. When you get your prepaid card in the post we will also tell you how long you will get this money for.</p>
-      <p>You can find out <a class="govuk-link" href="related/how-to-buy-with-prepaid-card"> how to use your prepaid card and what you can buy with your money on GOV.UK</a></p>
+        <ol class="govuk-list govuk-list--number govuk-heading-s">
+          <li>Your prepaid card will be sent</li>
+          <p class="govuk-body">We will send your prepaid card to the address you gave us.</p>
+          <li>Money will be added to your card</li>
+          <p class="govuk-body">We will add money to your card every 4 weeks so that you can buy healthy food and milk. You will get £12.40 every 4 weeks until your baby is born.</p>
+          <li>You can use your prepaid card when you shop</li>
+          <p class="govuk-body">You can use your card to pay for fruit, vegetables and milk.</p>
+        </ol>
+
+      <p>You can find out <a class="govuk-link" href="related/how-to-buy-with-prepaid-card"> how to use your prepaid card and what you can buy with your money on GOV.UK.</a></p>
 
 
     </div>
