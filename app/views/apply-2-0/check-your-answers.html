@@ -1,0 +1,227 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="manual-card-address">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check your answers before sending your application
+      </h1>
+
+      <!-- only add a heading for a list if there is more than one list -->
+      <h2 class="govuk-heading-m">
+        About you
+      </h2>
+      <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+      <!--   * `app-check-your-answers--short` for short questions -->
+      <!--   * `app-check-your-answers__questions-long` for long questions -->
+      <!--   * none for single group of q&a -->
+      <dl class="app-check-your-answers app-check-your-answers--short">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Your name
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['first-name'] }} {{ data['last-name'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="what-is-your-name">
+              Change<span class="govuk-visually-hidden"> first name</span>
+            </a>
+          </dd>
+        </div>
+
+         <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Describe yourself
+          </dt>
+          <dd class="app-check-your-answers__answer">
+           {{ data['describe-yourself'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="describe-yourself">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+
+{% if (data['describe-yourself'] === 'I am more than 10 weeks pregnant') or (data['describe-yourself'] === 'I am more than 10 weeks pregnant AND I have one or more children under the age of 4') %}
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Baby's due date
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['due-day'] }} {{ data['due-month'] }} {{ data['due-year'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="due-date">
+              Change<span class="govuk-visually-hidden"> baby due date</span>
+            </a>
+          </dd>
+        </div>
+{% endif %}
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            National Insurance number
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['national-insurance-number'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="national-insurance-number">
+              Change<span class="govuk-visually-hidden"> national insurance number</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Date of birth
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['dob-day'] }} {{ data['dob-month'] }} {{ data['dob-year'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="date-of-birth">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Address
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['address-line-1'] }}<br />
+            {{ data['address-line-2'] }}<br />
+            {{ data['address-town'] }}<br />
+            {{ data['address-postcode'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="manual-card-address">
+              Change<span class="govuk-visually-hidden"> address</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">
+        About your partner
+      </h2>
+
+       <dl class="app-check-your-answers app-check-your-answers--short">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Do you live with a partner?
+          </dt>
+          <dd class="app-check-your-answers__answer">
+             {{ data['live-with-partner'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="live-with-partner">
+              Change<span class="govuk-visually-hidden"> live with partner</span>
+            </a>
+          </dd>
+        </div>
+         
+
+        {% if data['live-with-partner'] === 'Yes' %}
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Partner's name
+          </dt>
+          <dd class="app-check-your-answers__answer">
+             {{ data['partner-first-name'] }} {{ data['partner-last-name'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="partner-name">
+              Change<span class="govuk-visually-hidden"> partners name</span>
+            </a>
+          </dd>
+        </div>
+
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            National Insurance number
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['nino-type'] if data['partner-nino'] === 'Yes' else data['partner-nino'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="does-partner-have-nino">
+              Change<span class="govuk-visually-hidden">partners national insurance number</span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Date of birth
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['partner-dob-day'] }} {{ data['partner-dob-month'] }} {{ data['partner-dob-year'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="partner-date-of-birth">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+      </dl>
+
+
+
+     <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h1 class="govuk-fieldset__heading">
+        Declaration
+      </h1>
+    </legend>
+    <div class="govuk-checkboxes" data-module="checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional-1">
+        <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
+          I understand that if I knowingly claim support that I am not entitled to, this support may be stopped and i will be liable to reimburse the UK Health Departments the value of any money I have received and used.
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+      <h2 class="govuk-heading-m">Now send your application</h2>
+
+      <p>
+        By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
+      <p>
+      You are also agreeing to us processing, storing and sharing your personal information as <a href="https://htbhf-prototype.herokuapp.com/apply-1-2/privacy-notice">explained in our privacy notice.</a></p>
+
+      <a class="govuk-button" href="confirmation" role="button">
+        Agree and send application
+      </a>
+
+    </div>
+  </div>
+{% endblock %}
