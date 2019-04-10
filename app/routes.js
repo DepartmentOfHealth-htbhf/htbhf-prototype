@@ -1,8 +1,12 @@
 const express = require('express')
 const router = express.Router()
+const applyTwoZero = require('./routes/apply-2-0')
 const apply = require('./routes/apply')
 const applyOneTwo = require('./routes/apply-1-2')
 const baseline = require('./routes/baseline')
+
+// Attach "apply 2 0" routes
+applyTwoZero.attachRoutes(router)
 
 // Attach "apply" routes
 apply.attachRoutes(router)
