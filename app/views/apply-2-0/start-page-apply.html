@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Test prototype
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Apply for help to buy healthy food
+      </h1>
+
+      <h2 class="govuk-heading-m">
+       Who can apply
+      </h2>
+
+      <p>You can apply if you are under the age of 18 and at least 10 weeks pregnant, even if you do not get any benefits.</p>
+      <p>You can apply if you are over the age of 18 and at least 10 weeks pregnant, or have a child under the age of four years old, and you or your family get:
+</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Income Support, or</li>
+        <li>Income-based Jobseeker’s Allowance, or</li>
+        <li>Income-related Employment and Support Allowance, or</li>
+        <li>Child Tax Credit (with a family income of £16,190 or less per year)</li>
+        <li>Universal Credit (with a family take home pay of £408 or less per month) </li>
+      </ul>
+
+      <h2 class="govuk-heading-m">
+       Who cannot apply
+      </h2>
+
+      <p>If you are under the age of 16 your parent, guardian or carer must apply for you.</p>
+
+      <p>This scheme is only available if you live in England, Wales or Northern Ireland. If you live in Scotland, visit the <a href="https://www.gov.scot/policies/maternal-and-child-health/" class="govuk-link">Scottish Government website for information</a>.</p>
+
+      <p>Applying takes around 5 minutes.</p>
+
+      <a href="which-user " role="button" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">Start now</a>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>You can also register by calling the Healthy Start helpline on 0345 607 6823. You can <a href="https://www.gov.uk/call-charges" class="govuk-link">find call charge information on GOV.UK</a>.</p>
+
+      <p>To apply online or by telephone you will need your:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>full name</li>
+        <li>date of birth</li>
+        <li>National Insurance number</li>
+        <li>baby’s due date (if you are pregnant)</li>
+        <li>postal address</li>
+      </ul>
+
+      <p>If you live with a partner, you will also need your partner’s:</p>
+
+       <ul class="govuk-list govuk-list--bullet">
+        <li>full name</li>
+        <li>date of birth</li>
+        <li>National Insurance number </li>
+      </ul>
+
+      <p>Your details must match the information you gave us when you applied for any other benefits.</p>
+
+      <p>If you do not have a National Insurance number, please <a href="https://www.gov.uk/lost-national-insurance-number" class="govuk-link">visit this GOV.UK help page</a>.</p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="related/how-to-buy-with-prepaid-card">
+                How to buy healthy food and milk with a prepaid card
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}
