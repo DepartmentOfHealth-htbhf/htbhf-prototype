@@ -1,0 +1,134 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Does your partner have a National Insurance number?
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="live-with-partner">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+  <form action="/apply-2-0/child1-date-of-birth" method="post" class="form">
+
+ <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="-conditional-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        How many children age 3 or under do you have?
+      </h1>
+    </legend>
+     <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="partner-nino" name="partner-nino" type="radio" value="No, my partner does not have a National Insurance number" {{ checked("partner-nino", "No, my partner does not have a National Insurance number") }} data-aria-controls="conditional-how-contacted-conditional-2">
+        <label class="govuk-label govuk-radios__label" for="partner-nino"/>
+         0
+        </label>
+      </div>
+    <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="partner-nino" name="partner-nino" type="radio" value="Yes" {{ checked("partner-nino", "Yes") }} data-aria-controls="conditional-how-contacted-conditional-1">
+        <label class="govuk-label govuk-radios__label" for="partner-nino"/>
+          1
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+        <div class="govuk-form-group">
+         <label class="govuk-label" for="national-insurance-number">
+    Child 1 date of birth
+  </label>
+              <span id="dob-hint" class="govuk-hint">
+      For example: 31 3 2019
+    </span>
+          <div class="govuk-date-input" id="dob">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="pregnant-dob-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="pregnant-dob-day" name="pregnant-dob-day" type="number" pattern="[0-9]*" value="{{ data['pregnant-dob-day'] }}"/>
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="pregnant-dob-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="pregnant-dob-month" name="pregnant-dob-month" type="number" pattern="[0-9]*" value="{{ data['pregnant-dob-month'] }}"/>
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="pregnant-dob-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="pregnant-dob-year" name="pregnant-dob-year" type="number" pattern="[0-9]*" value="{{ data['pregnant-dob-year'] }}"/>
+        </div>
+      </div>
+    </div>
+        </div>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="partner-nino" name="partner-nino" type="radio" value="No, my partner does not have a National Insurance number" {{ checked("partner-nino", "No, my partner does not have a National Insurance number") }} data-aria-controls="conditional-how-contacted-conditional-2">
+        <label class="govuk-label govuk-radios__label" for="partner-nino"/>
+          2
+        </label>
+      </div>
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="partner-nino" name="partner-nino" type="radio" value="No, my partner does not have a National Insurance number" {{ checked("partner-nino", "No, my partner does not have a National Insurance number") }} data-aria-controls="conditional-how-contacted-conditional-2">
+        <label class="govuk-label govuk-radios__label" for="partner-nino"/>
+          3
+      </div>
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="partner-nino" name="partner-nino" type="radio" value="No, my partner does not have a National Insurance number" {{ checked("partner-nino", "No, my partner does not have a National Insurance number") }} data-aria-controls="conditional-how-contacted-conditional-2">
+        <label class="govuk-label govuk-radios__label" for="partner-nino"/>
+          4
+        </label>
+      </div>
+       <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="partner-nino" name="partner-nino" type="radio" value="No, my partner does not have a National Insurance number" {{ checked("partner-nino", "No, my partner does not have a National Insurance number") }} data-aria-controls="conditional-how-contacted-conditional-2">
+        <label class="govuk-label govuk-radios__label" for="partner-nino"/>
+          5 or more
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+     Why do we need this?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    We will check your answer matches our records to confirm your identity. This helps us to prevent fraud.
+  </div>
+</details>
+
+
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
