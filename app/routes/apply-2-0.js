@@ -1,6 +1,26 @@
 const attachRoutes = (router) => {
   // APPLY_1_2 prototype routes beneath here
 
+
+  //Scotland
+
+router.post('/apply-2-0/juggling-balls-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'juggling-balls'
+  var jugglingBalls = req.session.data['juggling-balls']
+
+  // Check whether the variable matches a condition
+  if (jugglingBalls == "scotland"){
+     // Send user to ineligible page
+    res.redirect('/apply-2-0/not-eligible')
+  }
+  else {
+   // Send user to next page
+    res.redirect('/apply-2-0/date-of-birth')
+  }
+
+})
+
   // which user Branching
   router.post('/apply-2-0/applyyou-answer', function (req, res) {
     // Get the answer from session data
@@ -20,14 +40,14 @@ const attachRoutes = (router) => {
   router.post('/apply-2-0/benefits-answer', function (req, res) {
     // Get the answer from session data
     // The name between the quotes is the same as the 'name' attribute on the input elements
-    // However in JavaScript we can't use hyphens in variable names
+    // Hlive-scotlandowever in JavaScript we can't use hyphens in variable names
 
-    let applyyouyes = req.session.data['benefits']
+    let benefitsYes = req.session.data['benefits']
 
-    if (applyyouyes === 'false') {
+    if (benefitsYes == 'false') {
       res.redirect('/apply-2-0/holding-page')
     } else {
-      res.redirect('/apply-2-0/children')
+      res.redirect('/apply-2-0/children-u4')
     }
   })
 
@@ -35,7 +55,7 @@ const attachRoutes = (router) => {
 
   router.post('/apply-2-0/live-with-partner-answer', function (req, res) {
 
-    // Make a variable and give it the value from 'juggling-balls'
+    // Make a variable and give it the value from 'live with partner'
     var livePartner  = req.session.data['live-with-partner']
 
     // Check whether the variable matches a condition

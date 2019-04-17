@@ -25,37 +25,51 @@
 
 
  <form action="/apply-2-0/benefits-answer" method="post" class="form">
-
-  <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-        Which benefit are you on?
+        Which benefits are you on?
       </h1>
     </legend>
-    <div class="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="benefits" name="benefits" type="radio" value="true">
-        <label class="govuk-label govuk-radios__label" for="benefits-yes">
-          I am on Universal Credit
+    <span id="waste-hint" class="govuk-hint">
+      Select all that apply.
+    </span>
+    <div class="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="true">
+        <label class="govuk-label govuk-checkboxes__label" for="benefits-yes">
+          Universal Credit (with a family take home pay of £408 or less per month)
         </label>
       </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="benefits" name="benefits" type="radio" value="false">
-        <label class="govuk-label govuk-radios__label" for="benefits-no">
-          I am on Child Tax Credit
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="false">
+        <label class="govuk-label govuk-checkboxes__label" for="benefits-no">
+          Child Tax Credit (with a family income of £16,190 or less per year)
         </label>
       </div>
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="benefits" name="benefits" type="radio" value="false">
-        <label class="govuk-label govuk-radios__label" for="benefits-no">
-          I am not on any benefits
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="false">
+        <label class="govuk-label govuk-checkboxes__label" for="benefits-no">
+          Income Support
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="false">
+        <label class="govuk-label govuk-checkboxes__label" for="benefits-no">
+          Income-based Jobseeker’s Allowance
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="false">
+        <label class="govuk-label govuk-checkboxes__label" for="benefits-no">
+          Income-related Employment and Support Allowance,
         </label>
       </div>
     </div>
-
   </fieldset>
 </div>
+
 
 <details class="govuk-details">
   <summary class="govuk-details__summary">
