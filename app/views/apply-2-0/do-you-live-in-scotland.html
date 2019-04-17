@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Where do you live?
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="start-page-apply">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+ <form action="/apply-2-0/juggling-balls-answer" method="post" class="form">
+
+ <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Where do you live?
+      </h1>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="juggling-balls" name="juggling-balls" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="juggling-balls">
+          England
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="juggling-balls" name="juggling-balls" type="radio" value="scotland">
+        <label class="govuk-label govuk-radios__label" for="juggling-balls">
+          Scotland
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="juggling-balls" name="juggling-balls" type="radio" value="wales">
+        <label class="govuk-label govuk-radios__label" for="juggling-balls">
+          Wales
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="juggling-balls" name="juggling-balls" type="radio" value="northern-ireland">
+        <label class="govuk-label govuk-radios__label" for="juggling-balls">
+          Northern Ireland
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
