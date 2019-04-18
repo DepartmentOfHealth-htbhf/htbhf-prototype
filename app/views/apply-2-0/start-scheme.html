@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Test prototype
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Help to buy healthy food
+      </h1>
+
+      <h2 class="govuk-heading-s">Contents</h2>
+
+      <ul class="govuk-list govuk">
+        <li>
+          <a class="govuk-link" href="">Overview</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Apply for help to buy healthy food</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Move from Healthy Start to help to buy healthy food</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">Tell us about a change of details</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="#">How to buy healthy food and milk with a prepaid card</a>
+        </li>
+      </ul>
+
+  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">
+       Overview
+      </h2>
+
+      <p class="govuk-body">The help to buy healthy food scheme supports pregnant women and young families on benefits. You can <a href="/start-page-apply">find out if you are eligible here</a>.</p> 
+      
+      <p class="govuk-body">If you are eligible, you can get a minimum of £3.10 each week to spend on fresh or 
+      frozen fruit and vegetables, milk and infant formula milk. You can also claim free vitamins.</p>
+
+      <p class="govuk-body">If you are eligible, we will send you a special prepaid card (like a bank card) by post. We will add your money to the card every 4 weeks ready for you to spend. You can <a href="#">find out how to shop with your prepaid card here.</a></p> 
+     
+
+
+      <h2 class="govuk-heading-m">
+       How to apply for the first time
+      </h2>
+
+      <p>If you have never applied for help to buy healthy food or the Healthy Start scheme, you can <a href="/start-page-apply">apply here</a>.</p>
+
+    
+      <h2 class="govuk-heading-m">
+       How to move from Healthy Start
+      </h2>
+
+      <p>If you are currently on the Healthy Start scheme and received a letter about moving to help to buy healthy food, you should <a href="/start-page-transfer">fill in this online form</a>.
+
+
+      <div class="govuk-inset-text">This scheme is only available if you live in England, Wales or Northern Ireland. If you live in Scotland, visit the <a href="https://www.gov.scot/policies/maternal-and-child-health/" class="govuk-link">Scottish Government website for information</a>.</div>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="https://www.gov.uk/child-benefit">
+                Claim Child Benefit
+              </a>
+            </li>
+            <li>
+              <a href="https://www.gov.uk/maternity-allowance">
+                Maternity Allowance
+              </a>
+            </li>
+            <li>
+              <a href="rhttps://www.gov.uk/sure-start-maternity-grant">
+                Sure Start Maternity Grant
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}
