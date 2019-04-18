@@ -4,15 +4,15 @@ const attachRoutes = (router) => {
 
   //Scotland
 
-router.post('/apply-2-0/juggling-balls-answer', function (req, res) {
+router.post('/apply-2-0/live-scotland-answer', function (req, res) {
 
-  // Make a variable and give it the value from 'juggling-balls'
-  var jugglingBalls = req.session.data['juggling-balls']
+  // Make a variable and give it the value from 'live-scotland'
+  var liveScotland = req.session.data['live-scotland']
 
   // Check whether the variable matches a condition
-  if (jugglingBalls == "scotland"){
+  if (liveScotland == "scotland"){
      // Send user to ineligible page
-    res.redirect('/apply-2-0/not-eligible')
+    res.redirect('/apply-2-0/not-eligible-scotland')
   }
   else {
    // Send user to next page
