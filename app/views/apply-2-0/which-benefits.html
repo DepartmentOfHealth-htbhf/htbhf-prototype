@@ -13,7 +13,7 @@
   },
   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
 }) }}
-  <a class="govuk-back-link" href="start-page">Back</a>
+  <a class="govuk-back-link" href="date-of-birth">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -24,9 +24,9 @@
     <div class="govuk-grid-column-two-thirds">
 
 
- <form action="/apply-2-0/benefits-answer" method="post" class="form">
+ <form class="form" action="benefits-answer" method="post">
 <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+  <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
         Which benefits are you on?
@@ -37,33 +37,33 @@
     </span>
     <div class="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="true">
-        <label class="govuk-label govuk-checkboxes__label" for="benefits-yes">
+        <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="Universal Credit" {{ checked("benefits", "Universal Credit") }}>
+        <label class="govuk-label govuk-checkboxes__label" for="benefits">
           Universal Credit (with a family take home pay of £408 or less per month)
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="false">
-        <label class="govuk-label govuk-checkboxes__label" for="benefits-no">
+        <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="Child Tax Credit" {{ checked("benefits", "Child Tax Credit") }}>
+        <label class="govuk-label govuk-checkboxes__label" for="benefits">
           Child Tax Credit (with a family income of £16,190 or less per year)
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="false">
-        <label class="govuk-label govuk-checkboxes__label" for="benefits-no">
+        <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="Income Support" {{ checked("benefits", "Income Support") }}>
+        <label class="govuk-label govuk-checkboxes__label" for="benefits">
           Income Support
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="false">
-        <label class="govuk-label govuk-checkboxes__label" for="benefits-no">
+        <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="Income-based Jobseeker’s Allowance" {{ checked("benefits", "Income-based Jobseeker’s Allowance") }}>
+        <label class="govuk-label govuk-checkboxes__label" for="benefits">
           Income-based Jobseeker’s Allowance
         </label>
       </div>
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="false">
-        <label class="govuk-label govuk-checkboxes__label" for="benefits-no">
-          Income-related Employment and Support Allowance,
+        <input class="govuk-checkboxes__input" id="benefits" name="benefits" type="checkbox" value="Income-related Employment and Support Allowance">
+        <label class="govuk-label govuk-checkboxes__label" for="benefits">
+          Income-related Employment and Support Allowance
         </label>
       </div>
     </div>
