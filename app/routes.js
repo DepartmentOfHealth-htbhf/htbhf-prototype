@@ -5,6 +5,11 @@ const apply = require('./routes/apply')
 const applyOneTwo = require('./routes/apply-1-2')
 const baseline = require('./routes/baseline')
 
+router.use((req, res, next) => {
+  console.log(req.session.data)
+  next()
+})
+
 // Attach "apply 2 0" routes
 applyTwoZero.attachRoutes(router)
 
