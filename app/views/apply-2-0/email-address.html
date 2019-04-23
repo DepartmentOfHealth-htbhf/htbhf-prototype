@@ -13,7 +13,7 @@
   },
   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
 }) }}
-   <a class="govuk-back-link" href="one-time-passcode">Back</a>
+   <a class="govuk-back-link" href="mobile-number">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -23,14 +23,14 @@
 
       <h1 class="govuk-heading-xl">What is your email address?</h1>
 
-      <form class="form" action="check-your-answers" method="post">
+      <form class="form" action="choose-channel" method="post">
 
   <div class="govuk-form-group">
   <label class="govuk-label" for="email">
     Email address
   </label>
   
-  <input class="govuk-input" id="email" name="email" type="email" aria-describedby="email-hint" autocomplete="email" spellcheck="false">
+  <input class="govuk-input" id="email" name="email" type="text" aria-describedby="email-hint" autocomplete="email" spellcheck="false" value="{{ data['email'] }}">
 </div>
 
 <details class="govuk-details">
