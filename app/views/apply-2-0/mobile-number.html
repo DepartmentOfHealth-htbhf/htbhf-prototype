@@ -21,7 +21,7 @@ What is your mobile telephone number?
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="one-time-passcode" method="post">
+      <form class="form" action="email-address" method="post">
 
        <fieldset class="govuk-fieldset">
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
@@ -38,7 +38,7 @@ What is your mobile telephone number?
   <label class="govuk-label" for="telephone-number">
     UK mobile number
   </label>
-  <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" type="tel" autocomplete="tel">
+  <input class="govuk-input govuk-input--width-20" id="mobile-number" name="mobile-number" type="text" autocomplete="tel" value="{{ data['mobile-number'] }}">
 </div>
 
 </fieldset>
@@ -54,11 +54,8 @@ What is your mobile telephone number?
   </div>
 </details>
 
-  <div class="govuk-inset-text">
-  Security check: We need to confirm your mobile phone number now by texting you a telephone confirmation code.  
-</div>
-
-        <button class="govuk-button">Text me a code</button>
+ 
+        <button class="govuk-button">Continue</button>
 
       </form>
 
