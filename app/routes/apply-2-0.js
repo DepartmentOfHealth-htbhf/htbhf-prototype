@@ -21,8 +21,27 @@ router.post('/apply-2-0/where-live-answer', function (req, res) {
 
 })
 
+// live with partner branching
 
-  // ID verification
+  router.post('/apply-2-0/transfer-2-0/address-changed-answer', function (req, res) {
+
+    // Make a variable and give it the value from 'chabged-address'
+    var livePartner  = req.session.data['address-changed']
+
+    // Check whether the variable matches a condition
+    if (livePartner == "Yes"){
+      // Send user to next page
+      res.redirect('/apply-2-0/transfer-2-0/moved-address-unhappy')
+    }
+    else {
+      // Send user to address page
+      res.redirect('/apply-2-0/transfer-2-0/what-is-your-name')
+    }
+
+  })
+
+
+  // ID verification APPLY
   router.post('/apply-2-0/choose-channel-answer', function (req, res) {
     // Get the answer from session data
     // The name between the quotes is the same as the 'name' attribute on the input elements
@@ -34,6 +53,22 @@ router.post('/apply-2-0/where-live-answer', function (req, res) {
       res.redirect('/apply-2-0/email-passcode')
     } else {
       res.redirect('/apply-2-0/mobile-passcode')
+    }
+  })
+
+
+    // ID verification TRANSFER
+  router.post('/apply-2-0/transfer-2-0/choose-channel-answer', function (req, res) {
+    // Get the answer from session data
+    // The name between the quotes is the same as the 'name' attribute on the input elements
+    // However in JavaScript we can't use hyphens in variable names
+
+    let channelyes = req.session.data['verify']
+
+    if (channelyes === 'false') {
+      res.redirect('/apply-2-0/transfer-2-0/email-passcode')
+    } else {
+      res.redirect('/apply-2-0/transfer-2-0/mobile-passcode')
     }
   })
 
