@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const applyTwoOne = require('./routes/apply-2-1')
 const applyTwoZero = require('./routes/apply-2-0')
 const apply = require('./routes/apply')
 const applyOneTwo = require('./routes/apply-1-2')
@@ -9,6 +10,9 @@ router.use((req, res, next) => {
   console.log(req.session.data)
   next()
 })
+
+// Attach "apply 2 1" routes
+applyTwoOne.attachRoutes(router)
 
 // Attach "apply 2 0" routes
 applyTwoZero.attachRoutes(router)
