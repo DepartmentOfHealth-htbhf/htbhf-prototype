@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Where do you live?
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+ <form action="/apply-2-1/where-live-answer" method="post" class="form">
+
+ <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Where do you live?
+      </h1>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-live" name="where-live" type="radio" value="England" {{ checked("where-live", "England") }}>
+        <label class="govuk-label govuk-radios__label" for="where-live">
+          England
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-live" name="where-live" type="radio" value="Scotland">  
+        <label class="govuk-label govuk-radios__label" for="where-live">
+          Scotland
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-live" name="where-live" type="radio" value="Wales" {{ checked("where-live", "Wales") }}>  
+        <label class="govuk-label govuk-radios__label" for="where-live">
+          Wales
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-live" name="where-live" type="radio" value="Northern Ireland" {{ checked("where-live", "Northern Ireland") }}>
+        <label class="govuk-label govuk-radios__label" for="where-live">
+          Northern Ireland
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

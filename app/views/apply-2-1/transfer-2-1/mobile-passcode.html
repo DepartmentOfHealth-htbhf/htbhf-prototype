@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Enter your telephone confirmation code
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+   <a class="govuk-back-link" href="choose-channel">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Enter your mobile telephone confirmation code</h1>
+
+  <p>We have texted a code to <strong>{{ data['mobile-number'] }}</strong>. You should get it within 5 minutes. You only need to use this code once.</p>
+
+      <form class="form" action="code-accepted" method="post">
+
+        <div class="govuk-form-group">
+           <label class="govuk-label" for="national-insurance-number">
+    Telephone confirmation code
+  </label>
+  <span id="national-insurance-number-hint" class="govuk-hint">
+    For example, XX34567
+  </span>
+  <input class="govuk-input govuk-input--width-10" id="mobile-passcode" name="mobile-passcode" type="text" aria-describedby="mobile-passcode" />
+</div>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      I did not get a telephone confirmation code
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    It can take up to 5 minutes to receive a text message with your code. If you have not got a code after 5 minutes, we can send you a new one. <a href="#">Send me a new code</a>
+  </div>
+</details>
+
+
+
+        <button class="govuk-button">Confirm</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

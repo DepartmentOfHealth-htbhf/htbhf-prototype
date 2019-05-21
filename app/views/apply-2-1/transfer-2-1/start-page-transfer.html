@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Test prototype
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Move from Healthy Start to the help to buy healthy food scheme
+      </h1>
+
+      <h2 class="govuk-heading-m">
+       Who can move to the new scheme
+      </h2>
+
+      <p>If you currently get Healthy Start vouchers you can choose to move to the new help to buy healthy food scheme instead.</p>
+      <p>If you do not currently get Healthy Start vouchers you can also <a href="start-page-apply">apply for the new scheme</a>.</p>
+      <p>This scheme is only available if you live in England, Wales or Northern Ireland. If you live in Scotland, visit the <a href="https://www.gov.scot/policies/maternal-and-child-health/" class="govuk-link">Scottish Government website for information</a>.</p>
+
+
+      <h2 class="govuk-heading-m">
+      What will be different to Healthy Start?</h2>
+
+      <p>You will stop getting paper vouchers in the post each month. We will send you a single prepaid card to keep and use when you shop instead. We will add money to your card every month ready for you to spend.</p>
+      <p>A prepaid card is like a bank card. You should be able to use your prepaid card at any shop that accepts bank or credit card payments. You can use contactless payment, or enter your PIN when you pay.</p> 
+
+
+      <h2 class="govuk-heading-m">What will be the same as Healthy Start?</h2>
+
+      <p>You will still get the same amount of money to spend on fresh and frozen fruit and vegetables, milk and infant formula.</p>
+
+      <h2 class="govuk-heading-m">How to move to help to buy healthy food<h2>  
+
+      <p>You should have received a letter by post with a security code in it. We will ask you for this code when you complete this short online application form. The security code helps us to confirm your identity and prevent fraud.</p>
+
+      <p>Applying to move scheme takes around 5 minutes.</p>
+
+      <a href="#" role="button" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">Start now</a>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>You can also register by calling the Healthy Start helpline on 0345 607 6823. You can <a href="https://www.gov.uk/call-charges" class="govuk-link">find call charge information on GOV.UK</a>.</p>
+
+      <p>To apply to move scheme online or by telephone you will need your:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>security code from the letter we sent you</li>
+        <li>full name</li>
+        <li>date of birth</li>
+        <li>National Insurance number</li>
+        <li>baby’s due date (if you are pregnant)</li>
+        <li>postal address</li>
+        <li>mobile phone number</li>
+        <li>email address</li>
+      </ul>
+
+      <p>If you live with a partner, you will also need your partner’s:</p>
+
+       <ul class="govuk-list govuk-list--bullet">
+        <li>full name</li>
+        <li>date of birth</li>
+        <li>National Insurance number </li>
+      </ul>
+
+      <p>Your details must match the information you gave us when you applied for any other benefits.</p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="related/how-to-buy-with-prepaid-card">
+                How to buy healthy food and milk with a prepaid card
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}

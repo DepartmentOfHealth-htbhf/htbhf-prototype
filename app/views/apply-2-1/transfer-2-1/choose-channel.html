@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  How do you want to confirm your identity?
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+  <form action="/apply-2-1/transfer-2-1/choose-channel-answer" method="post" class="form">
+
+ <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        How do you want to confirm your identity?
+      </h1>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="verify" name="verify" type="radio" value="true">
+        <label class="govuk-label govuk-radios__label govuk-label--s" for="channel-yes">
+          Send me a text message
+        </label>
+         <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">
+          We will text a security code to the mobile telephone number you just entered
+        </span>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="verify" name="verify" type="radio" value="false">
+        <label class="govuk-label govuk-radios__label govuk-label--s" for="channel-no">
+          Send me an email
+        </label>
+         <span id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+          We will email a security code to the email address you just entered
+        </span>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+     Why do we need this?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    We must gather and confirm your contact details to help prevent fraud. We may also need to call you about the scheme.
+  </div>
+</details>
+
+
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

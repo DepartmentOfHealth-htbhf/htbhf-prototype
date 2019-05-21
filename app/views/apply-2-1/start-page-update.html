@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Test prototype
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Update your details for the help to buy healthy food scheme
+      </h1>
+
+      <h2 class="govuk-heading-m">
+       What to update
+      </h2>
+
+      <p>Your help to buy healthy food entitlement (the amount of money you get each month) depends on a number of different things. That is why you must tell us when you:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>are pregnant</li>
+        <li>give birth</li>
+      </ul>
+
+      <p>You do not need to let us know if your job or income changes. We will automatically be told this by other government departments.</p>
+
+     <p>change address or contact details, move in with your partner, stop living with your partner??????</p>
+
+      <h2 class="govuk-heading-m">
+       How to tell us about a change
+      </h2>
+
+      <p>You can use this online form to tell us about a change in your life. It takes around 5 minutes to complete.</p>
+
+      <a href="which-user " role="button" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">Start now</a>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>You can also update your details by calling the Healthy Start helpline on 0345 607 6823. You can <a href="https://www.gov.uk/call-charges" class="govuk-link">find call charge information on GOV.UK</a>.</p>
+
+      <p>To update your details online or by telephone you will need your:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>full name</li>
+        <li>date of birth</li>
+        <li>National Insurance number</li>
+        <li>baby’s due date (if you are pregnant)</li>
+        <li>baby's birth date (if you recently gave birth)</li>
+        <li>postal address</li>
+        <li>mobile phone number</li>
+        <li>email address</li>
+      </ul>
+
+      <p>If you live with a partner, you will also need your partner’s:</p>
+
+       <ul class="govuk-list govuk-list--bullet">
+        <li>full name</li>
+        <li>date of birth</li>
+        <li>National Insurance number </li>
+      </ul>
+
+      <p>Your details must match the information you gave us when you applied for any other benefits.</p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <li>
+               <a class="govuk-link" href="start-eligible">Check if you are eligible for help to buy healthy food</a>
+              </li>
+              <li>
+              <a class="govuk-link" href="start-page-transfer">Move from Healthy Start to help to buy healthy food</a>
+            </li>
+            <li>
+              <a class="govuk-link" href="start-page-apply">Apply for help to buy healthy food</a>
+            </li>
+            <li><a class="govuk-link" href="related/how-to-buy-with-prepaid-card">How to buy healthy food and milk with a prepaid card</a>
+            </li>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}
