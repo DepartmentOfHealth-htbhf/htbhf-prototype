@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Confirmation page example
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">You have finished your application</h1>
+        <div class="govuk-panel__body">
+          We will give you<br><strong>£XX.XX</strong> each month
+        </div>
+      </div>
+
+       <div class="govuk-inset-text">
+  Download, print or email yourself a copy of this page to keep.</div>
+      
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+        <ol class="govuk-list govuk-list--number govuk-heading-s">
+          <li>Your prepaid card will be sent</li>
+          <p class="govuk-body">We will post your prepaid card to the address you gave us. You should get it within 5 working days.</p>
+          <li>Money will be added to your card</li>
+          <p class="govuk-body">£XX.XX will be loaded onto your card ready for you to spend straight away.</p>
+          <p>We will add your next payment of £XX.XX to your card on 6 June 2019. You will be paid the same amount of money every 4 weeks after that date.</p>
+          <li>You can use your prepaid card when you shop</li>
+          <p class="govuk-body">You can use your card to pay for fresh and frozen fruit and vegetables, milk and infant formula.</p>
+        </ol>
+
+      <p>You can find out <a class="govuk-link" href="related/how-to-buy-with-prepaid-card"> how to use your prepaid card and what you can buy with your money on GOV.UK.</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}
