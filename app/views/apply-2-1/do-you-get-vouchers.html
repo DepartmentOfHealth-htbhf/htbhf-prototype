@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you get vouchers now?
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+ <form action="/apply-2-1/get-vouchers-answer" method="post" class="form">
+
+ <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Do you get Healthy Start vouchers now?
+      </h1>
+    </legend>
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="get-vouchers" name="get-vouchers" type="radio" value="Yes" {{ checked("where-live", "England") }}>
+        <label class="govuk-label govuk-radios__label" for="get-vouchers">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="get-vouchers" name="get-vouchers" type="radio" value="No">  
+        <label class="govuk-label govuk-radios__label" for="get-vouchers">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+     Why do we need this?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    We need to know if you get Healthy Start vouchers now so we can ask you the right questions.
+  </div>
+</details>
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
