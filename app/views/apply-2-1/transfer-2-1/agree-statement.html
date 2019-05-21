@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Are you pregnant?
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+   <form class="form" action="confirmation" method="post">
+
+   <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Read and agree to this statement
+      </h1>
+    </legend>
+    <p>If I knowingly claim support that I am not entitled to, this support may be stopped and I will be liable to pay back the money I have received and used.</p>
+        <p>I also agree to the service processing, storing and sharing my personal information as <a href="/apply-2-0/privacy-notice">explained in their privacy notice.</a></p>
+    <div class="govuk-checkboxes" data-module="checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional-1">
+        <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
+        <p>I confirm that the details I am providing are correct.</p>
+        
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+     Why do we need this?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    This helps us to work out how much money you should get each month during your pregnancy and once your baby is born.
+  </div>
+</details>
+
+        <button class="govuk-button">Agree and send application</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
