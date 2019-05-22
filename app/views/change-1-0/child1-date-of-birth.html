@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What are your children's dates of birth?
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="national-insurance-number" method="post">
+
+   <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        What are your children's dates of birth?
+      </h1>
+    </legend>
+         <span id="dob-hint" class="govuk-hint">
+      For example, 31 3 2018
+    </span>
+    
+
+    {% for i in range(0, data['children-u4']) -%}
+    <p class="govuk-body govuk-!-font-weight-bold">
+          Child's date of birth</p>
+      <div class="govuk-date-input" id="dob">
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="dob-day">
+              Day
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="c{{i}}-dob-day" name="c{{i}}-dob-day" type="number" pattern="[0-9]*" value="{{ data['c{{i}}-dob-day'] }}"/>
+          </div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="c{{i}}-dob-month">
+              Month
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="c{{i}}-dob-month" name="c{{i}}-dob-month" type="number" pattern="[0-9]*" value="{{ data['c{{i}}-dob-month'] }}"/>
+          </div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="c{{i}}-dob-year">
+              Year
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="c{{i}}-dob-year" name="c{{i}}-dob-year" type="number" pattern="[0-9]*" value="{{ data['c{{i}}-dob-year'] }}"/>
+          </div>
+        </div>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--m">
+    {%- endfor %}
+
+
+
+  </fieldset>
+</div>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+     Why do we need this?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    We will check your answers match our records to confirm your identity. This helps us to prevent fraud.
+  </div>
+</details>
+
+
+
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

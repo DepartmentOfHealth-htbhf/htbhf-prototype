@@ -1,0 +1,213 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+       <h2 class="govuk-heading-m">
+        Your updated details
+      </h2>
+
+       <dl class="app-check-your-answers app-check-your-answers--short">
+        
+          <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Your new name
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['first-name'] }} {{ data['last-name'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="what-is-your-name">
+              Change<span class="govuk-visually-hidden"> name</span>
+            </a>
+          </dd>
+        </div>
+
+          <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Your new mobile telephone number
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['mobile-number'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="mobile-number">
+              Change<span class="govuk-visually-hidden"> mobile number</span>
+            </a>
+          </dd>
+        </div>
+
+         
+      </dl>
+
+      <!-- only add a heading for a list if there is more than one list -->
+      <h2 class="govuk-heading-m">
+        About you
+      </h2>
+      <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+      <!--   * `app-check-your-answers--short` for short questions -->
+      <!--   * `app-check-your-answers__questions-long` for long questions -->
+      <!--   * none for single group of q&a -->
+      <dl class="app-check-your-answers app-check-your-answers--short">
+
+      <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Are you pregnant?
+          </dt>
+          <dd class="app-check-your-answers__answer">
+           {{ data['pregnant'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="are-you-pregnant">
+              Change<span class="govuk-visually-hidden"> if you are pregnant</span>
+            </a>
+          </dd>
+        </div>
+
+{% if data['pregnant'] === 'Yes' %}
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Baby's due date
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['pregnant-dob-day'] }} {{ data['pregnant-dob-month'] }} {{ data['pregnant-dob-year'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="are-you-pregnant">
+              Change<span class="govuk-visually-hidden"> baby due date</span>
+            </a>
+          </dd>
+        </div>
+{% endif %}
+
+ <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Which benefits are you on?
+          </dt>
+          <dd class="app-check-your-answers__answer">
+           {{ data['benefits'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="which-benefits">
+              Change<span class="govuk-visually-hidden"> benefits</span>
+            </a>
+          </dd>
+        </div>
+       
+
+         <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Date of birth
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['dob-day'] }} {{ data['dob-month'] }} {{ data['dob-year'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="date-of-birth">
+              Change<span class="govuk-visually-hidden"> date of birth</span>
+            </a>
+          </dd>
+        </div>
+
+
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            National Insurance number
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['national-insurance-number'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="national-insurance-number">
+              Change<span class="govuk-visually-hidden"> national insurance number</span>
+            </a>
+          </dd>
+        </div>
+
+       
+
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Address
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['address-line-1'] }}<br />
+            {{ data['address-line-2'] }}<br />
+            {{ data['address-town'] }}<br />
+            {{ data['address-postcode'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="manual-card-address">
+              Change<span class="govuk-visually-hidden"> address</span>
+            </a>
+          </dd>
+        </div>
+      
+          <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Email address
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {{ data['email'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="email-address">
+              Change<span class="govuk-visually-hidden"> mobile number</span>
+            </a>
+          </dd>
+        </div>
+</dl>
+
+
+      <h2 class="govuk-heading-m">
+        About your children
+      </h2>
+
+       <dl class="app-check-your-answers app-check-your-answers--short">
+        <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Children's dates of births age 3 or under
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {% for i in range(0, data['children-u4']) -%}
+              <p>{{ data['c' + i + '-dob-day'] }} / {{ data['c' + i + '-dob-month'] }} / {{ data['c' + i + '-dob-year'] }}</p>
+            {%- endfor %}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="children-u4">
+              Change<span class="govuk-visually-hidden"> children under 4</span>
+            </a>
+          </dd>
+        </div>
+         
+      </dl>
+
+
+      <a class="govuk-button" href="agree-statement" role="button">
+        Continue
+      </a>
+
+    </div>
+  </div>
+{% endblock %}
