@@ -27,11 +27,11 @@ router.post('/change-1-0/where-live-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (whereLive == "Scotland"){
      // Send user to ineligible page
-    res.redirect('/change-1-0/you-need-to-tell')
+    res.redirect('/change-1-0/you-need-to-tell-pregnant')
   }
   else {
    // Send user to next page
-    res.redirect('/change-1-0/what-is-your-new-name')
+    res.redirect('/change-1-0/manual-card-new-address')
   }
 
 })

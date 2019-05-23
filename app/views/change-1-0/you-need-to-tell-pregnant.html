@@ -26,14 +26,21 @@
           <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
               <span class="govuk-warning-text__assistive">Warning</span>
-              We cannot update your contact details in this service until you have told X {{ data['Universal Credit'] }} that you have changed your:
+              We cannot update your contact details in this service until you have told:
               </strong>
         </div>
 
-        <ul class="govuk-list govuk-list--bullet">
-        <li>name</li>
-        <li>address</li>
-      </ul>
+<ul class="govuk-list govuk-list--bullet">
+      {% for benefit in data['benefits'] %}
+        <li>{{ benefit }}</li>
+      {% endfor %}
+    </ul>
+    <h1 class="govuk-heading-m">You must tell them about these changes:</h1>
+    <ul class="govuk-list govuk-list--bullet">
+      {% for changed in data['changed'] %}
+        <li>{{ changed }}</li>
+      {% endfor %}
+    </ul>
 
      <p class="govuk-body">Please come back after you have done this to update your contact information with us.</p>
     
@@ -52,7 +59,7 @@
        <h2 class="govuk-heading-m">You can continue to update your pregnancy information</h2>
        <p>We just need to ask you a few security questions before we can work out your new payment amount.</p>
 
-       <button class="govuk-button">Continue</button>
+       <a href="manual-card-new-address" role="button" class="govuk-button">Continue</a>
 
       </div>
     </div>
