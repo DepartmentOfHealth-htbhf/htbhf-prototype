@@ -36,21 +36,23 @@ router.post('/change-1-0/where-live-answer', function (req, res) {
 
 })
 
- //What has changed
+
+
+ //Changed 2
 
 router.post('/change-1-0/changed-answer', function (req, res) {
 
   // Make a variable and give it the value from 'what-has-changed'
-  var Changed = req.session.data['what-has-changed']
+  var Changed = req.session.changed
 
   // Check whether the variable matches a condition
   if (Changed == "Name"){
      // Send user to ineligible page
-    res.redirect('/change-1-0/date-of-birth')
+    res.redirect('/change-1-0/have-you-told')
   }
   else {
    // Send user to next page
-    res.redirect('/change-1-0/date-of-birth')
+    res.redirect('/change-1-0/which-benefits')
   }
 
 })
@@ -61,7 +63,7 @@ router.post('/change-1-0/changed-answer', function (req, res) {
 router.post('/change-1-0/benefits-answer', function (req, res) {
 
   // Make a variable and give it the value from 'live-scotland'
-  var Benefits = req.session.data['which-benefits']
+  var Benefits = req.session.benefits
 
   // Check whether the variable matches a condition
   if (Benefits == "Universal Credit"){

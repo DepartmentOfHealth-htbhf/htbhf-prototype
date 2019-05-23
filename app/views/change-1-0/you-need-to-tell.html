@@ -20,14 +20,24 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">You need to tell X {{ data['Universal Credit'] }} that your details have changed for:</h1>
-        <ul class="govuk-list govuk-list--bullet">
-        <li>name</li>
-        <li>address</li>
-      </ul>
+        <h1 class="govuk-heading-l">You need to tell the following that your{{ changed }} details have changed:</h1>
+         <ul class="govuk-list govuk-list--bullet">
+      {% for benefit in data['benefits'] %}
+        <li>{{ benefit }}</li>
+      {% endfor %}
+    </ul>
+    <h1 class="govuk-heading-m">for:</h1>
+    <ul class="govuk-list govuk-list--bullet">
+      {% for changed in data['changed'] %}
+        <li>{{ changed }}</li>
+      {% endfor %}
+    </ul>
         <p class="govuk-body">
           Once you have done this you will be able to update your details for your prepaid card.</a>
         </p>
+
+        <a href="are-you-pregnant" role="button" class="govuk-button">Continue</a>
+
       </div>
     </div>
  
