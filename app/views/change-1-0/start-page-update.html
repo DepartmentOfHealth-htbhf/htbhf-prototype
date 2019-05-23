@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Help to buy healthy food
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+       Report a change in your circumstances for your help to buy healthy food prepaid card
+      </h1>
+
+      <p>You need to report changes to your circumstances so you keep getting the right amount of benefits.</p>
+
+<p>Your claim might be stopped or reduced if you do not report a change straight away or you give incorrect information.</p>
+
+ <h2 class="govuk-heading-m">Changes you can report online</h2>
+
+ <ul class="govuk-list govuk-list--bullet">
+        <li>name</li>
+        <li>address</li>
+        <li>a new pregnancy</li>
+        <li>mobile phone number</li>
+        <li>email address</li>
+      </ul>
+
+
+      <p>To update your details online you will need your:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>full name</li>
+        <li>date of birth</li>
+        <li>National Insurance number</li>
+        <li>baby’s due date (if you are pregnant)</li>
+        <li>postal address</li>
+        <li>mobile phone number</li>
+        <li>email address</li>
+      </ul>
+
+
+      <p>Your details must match the information you gave when you applied for any other benefits.</p>
+
+
+      <p>Reporting a change in your circumstances online takes around 5 minutes.</p>
+
+
+
+      <a href="are-you-pregnant" role="button" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8">Report a change</a>
+
+      <h2 class="govuk-heading-m">You can also report a change in circumstances by telephone</h2>
+
+      <p>Call the Healthy Start helpline on 0345 607 6823. You can <a href="https://www.gov.uk/call-charges" class="govuk-link">find call charge information on GOV.UK</a>.</p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+            <a class="govuk-link" href="start-eligible">Check if you are eligible for a help to buy healthy food prepaid card</a>
+            </li>
+            <li>
+            <a class="govuk-link" href="holding-page">Tell us about a change of details</a>
+            </li>
+            <li><a class="govuk-link" href="related/how-to-buy-with-prepaid-card">How to buy healthy food and milk with a prepaid card</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}
