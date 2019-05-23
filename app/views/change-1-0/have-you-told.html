@@ -30,10 +30,15 @@
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-        Have you told x that your details have changed?
+        Have you told the following that your details have changed?
       </h1>
     </legend>
-    <div class="govuk-radios">
+    <ul class="govuk-list govuk-list--bullet">
+      {% for benefit in data['benefits'] %}
+        <li>{{ benefit }}</li>
+      {% endfor %}
+    </ul>
+    <div class="ggovuk-radios govuk-radios--inline">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="where-live" name="where-live" type="radio" value="England" {{ checked("where-live", "England") }}>
         <label class="govuk-label govuk-radios__label" for="where-live">
