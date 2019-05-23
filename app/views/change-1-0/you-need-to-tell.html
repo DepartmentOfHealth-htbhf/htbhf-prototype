@@ -20,22 +20,34 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">You need to tell the following that your{{ changed }} details have changed:</h1>
-         <ul class="govuk-list govuk-list--bullet">
+
+        <h1 class="govuk-heading-xl">You must update your information in these places before we can update your details:</h1>    
+        <p class="govuk-body"></p>
+        <ul class="govuk-list govuk-list--bullet">
       {% for benefit in data['benefits'] %}
         <li>{{ benefit }}</li>
       {% endfor %}
     </ul>
-    <h1 class="govuk-heading-m">for:</h1>
+    <h1 class="govuk-heading-m">You must tell them about these changes:</h1>
     <ul class="govuk-list govuk-list--bullet">
       {% for changed in data['changed'] %}
         <li>{{ changed }}</li>
       {% endfor %}
     </ul>
-        <p class="govuk-body">
-          Once you have done this you will be able to update your details for your prepaid card.</a>
-        </p>
 
+        <p class="govuk-body">Please come back after you have done this to update your information with us.</p>
+    
+
+       <details class="govuk-details">
+          <summary class="govuk-details__summary">
+           <span class="govuk-details__summary-text">
+           Why do I need to do this?
+          </span>
+          </summary>
+        <div class="govuk-details__text">
+        The information in our database must match benefit databases, so we need you to update your information with them first.
+       </div>
+      </details>
         <a href="are-you-pregnant" role="button" class="govuk-button">Continue</a>
 
       </div>

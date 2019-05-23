@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  You cannot apply if you live in Scotland
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">We can only update your pregnancy information at the moment</h1> 
+        
+        <div class="govuk-warning-text">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              We cannot update your contact details in this service until you have told X {{ data['Universal Credit'] }} that you have changed your:
+              </strong>
+        </div>
+
+        <ul class="govuk-list govuk-list--bullet">
+        <li>name</li>
+        <li>address</li>
+      </ul>
+
+     <p class="govuk-body">Please come back after you have done this to update your contact information with us.</p>
+    
+
+       <details class="govuk-details">
+          <summary class="govuk-details__summary">
+           <span class="govuk-details__summary-text">
+           Why do I need to do this?
+          </span>
+          </summary>
+        <div class="govuk-details__text">
+        The information in our database must match the X {{ data['Universal Credit'] }} database, so we need you to update your information with them first.
+       </div>
+      </details>
+
+       <h2 class="govuk-heading-m">You can continue to update your pregnancy information</h2>
+       <p>We just need to ask you a few security questions before we can work out your new payment amount.</p>
+
+       <button class="govuk-button">Continue</button>
+
+      </div>
+    </div>
+ 
+{% endblock %}
