@@ -20,14 +20,28 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">You need to tell X {{ data['Universal Credit'] }} that your details have changed for:</h1>
+        <h1 class="govuk-heading-xl">You must update your details with X {{ data['Universal Credit'] }} first</h1>    
+        <p class="govuk-body">We cannot update your information in this service until you have told X {{ data['Universal Credit'] }} that you have changed your:</p>
         <ul class="govuk-list govuk-list--bullet">
         <li>name</li>
         <li>address</li>
       </ul>
-        <p class="govuk-body">
-          Once you have done this you will be able to update your details for your prepaid card.</a>
-        </p>
+
+        <p class="govuk-body">Please come back after you have done this to update your information with us.</p>
+    
+
+       <details class="govuk-details">
+          <summary class="govuk-details__summary">
+           <span class="govuk-details__summary-text">
+           Why do I need to do that first?
+          </span>
+          </summary>
+        <div class="govuk-details__text">
+        The information in our database must match the X {{ data['Universal Credit'] }} database, so we need you to update your information with them first.
+       </div>
+      </details>
+
+
       </div>
     </div>
  
