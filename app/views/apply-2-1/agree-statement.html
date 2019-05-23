@@ -30,16 +30,51 @@
   <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-        Read and agree to this statement
+        Read and agree to our terms and conditions
       </h1>
     </legend>
-    <p>If I knowingly claim support that I am not entitled to, this support may be stopped and I will be liable to pay back the money I have received and used.</p>
-        <p>I also agree to the service processing, storing and sharing my personal information as <a href="/apply-2-0/privacy-notice">explained in their privacy notice.</a></p>
+    <h3 class="govuk-heading-m">About your application</h3>
+
+<p>By submitting your application you confirm that the information you have provided is correct.</p> 
+<p>You agree that the Department of Health and Social Care can share information about you with other organisations to check that the information you have given is correct.</p>
+
+<p>You understand that if you are claiming payments you know you are not entitled to, your payments will be stopped and you may be asked to pay back any money you should not have received.</p>
+
+
+ <h3 class="govuk-heading-m">Using your card</h3>
+
+<p>You must only use your prepaid card to <a href=”related/how-to-buy-with-prepaid-card” target="_blank">buy eligible items</a> (link opens in a new tab).<p>
+
+<p>You are responsible for all spending on your prepaid card, even if you let someone else use it.</p> 
+
+<p>If your card is lost or stolen you must report it immediately by following the instructions we will include with your card. If you do not tell the card company straight away, we may not be able to give you back the balance that was on your card. We may also have to take a small administration fee from your card balance to cover costs.</p> 
+
+<p>If you need more than 4 replacement cards in a year, a small administration fee may be taken from your card balance to cover costs.</p>
+
+<p>If you do not spend your payment within 8 weeks of it being added to your card, your payments will be paused. You must spend the full amount for payments to start again.</p>
+
+<h3 class="govuk-heading-m">About your personal information</h3>
+
+<p>You must let us know if your contact information, address or circumstances change. If you are on any benefits, you must let the relevant agency know too.</p>
+
+<p>You must <a href=”privacy-notice” target="_blank">read and agree to our privacy statement</a> (link opens in a new tab). This explains why we need to ask you for personal information, where we will store it, and who we need to share it with.</p>
+
+<p>You agree that the Department of Health and Social Care has the right to ask retailers for transaction receipts when you shop. This helps us to prevent fraud.</p>
+
+
+{% from "warning-text/macro.njk" import govukWarningText %}
+
+{{ govukWarningText({
+  text: "If you do not comply with these terms and conditions, your payment may be stopped. You may also be asked to repay money you have received.",
+  iconFallbackText: "Warning"
+}) }}
+
+
     <div class="govuk-checkboxes" data-module="checkboxes">
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional-1">
         <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
-        <p>I confirm that the details I am providing are correct.</p>
+        <p>I confirm that I have read and agree to comply with these terms and conditions.</p>
         
         </label>
       </div>
@@ -47,16 +82,6 @@
   </fieldset>
 </div>
 
-<details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-     Why do we need this?
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    This helps us to work out how much money you should get each month during your pregnancy and once your baby is born.
-  </div>
-</details>
 
         <button class="govuk-button">Agree and send application</button>
 
