@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your National Insurance Number?
+  Enter your email confirmation code
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,32 +20,37 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l" style="color: red;">*Content under review*</h1>
+      <h1 class="govuk-heading-xl">Enter your security code</h1>
 
-      <h1 class="govuk-heading-xl">What's your National Insurance number?</h1>
+  <p>A security code has been sent to <strong>{{ data['email'] }}</strong>. You should get it within 5 minutes. You only need to use this code once.</p>
 
-      <form class="form" action="manual-card-address" method="post">
+      <form class="form" action="check-your-answers" method="post">
 
         <div class="govuk-form-group">
            <label class="govuk-label" for="national-insurance-number">
-    National Insurance number
+    Email security code
   </label>
   <span id="national-insurance-number-hint" class="govuk-hint">
-    It's on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’.
+    For example, 123456
   </span>
-  <input class="govuk-input govuk-input--width-10" id="national-insurance-number" name="national-insurance-number" type="text" aria-describedby="national-insurance-number-hint" value="{{ data['national-insurance-number'] }}"/>
+  <input class="govuk-input govuk-input--width-10" id="email-passcode" name="email-passcode" type="text" aria-describedby="email-passcode" />
 </div>
 
 <details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Why do we need this? 
+      I did not get an email security code
     </span>
   </summary>
   <div class="govuk-details__text">
-    To check your eligibility.
+    It can take up to 5 minutes to receive an email with your code. If you have not got a code after 5 minutes, you can <a href="#">ask for a new one</a>.
   </div>
 </details>
-        <button class="govuk-button">Continue</button>
+
+
+
+        <button class="govuk-button">Confirm</button>
 
       </form>
 
