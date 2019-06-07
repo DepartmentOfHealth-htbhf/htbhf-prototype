@@ -1,63 +1,77 @@
 const attachRoutes = (router) => {
   // BASELINE prototype routes beneath here
 
-  // which user Branching
-  router.post('/BASELINE/pregnant1-answer', function (req, res) {
+
+  //Scotland
+
+router.post('/BASELINE/where-live-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'live-scotland'
+  var whereLive = req.session.data['where-live']
+
+  // Check whether the variable matches a condition
+  if (whereLive == "Scotland"){
+     // Send user to ineligible page
+    res.redirect('/BASELINE/not-eligible-scotland')
+  }
+  else {
+   // Send user to next page
+    res.redirect('/BASELINE/date-of-birth')
+  }
+
+})
+
+
+
+  // ID verification APPLY
+  router.post('/BASELINE/choose-channel-answer', function (req, res) {
     // Get the answer from session data
     // The name between the quotes is the same as the 'name' attribute on the input elements
     // However in JavaScript we can't use hyphens in variable names
 
-    let pregnant1yes = req.session.data['pregnant1']
+    let channelyes = req.session.data['verify']
 
-    if (pregnant1yes === 'false') {
-      res.redirect('/BASELINE/holding-page')
+    if (channelyes === 'false') {
+      res.redirect('/BASELINE/email-passcode')
     } else {
-      res.redirect('/BASELINE/what-is-your-name')
+      res.redirect('/BASELINE/mobile-passcode')
     }
   })
 
-  // live with partner branching
 
-  router.post('/BASELINE/live-with-partner-answer', function (req, res) {
 
-    // Make a variable and give it the value from 'juggling-balls'
-    var livePartner  = req.session.data['live-with-partner']
+ //Benefits
 
-    // Check whether the variable matches a condition
-    if (livePartner == "Yes"){
-      // Send user to next page
-      res.redirect('/BASELINE/does-partner-have-nino')
-    }
-    else {
-      // Send user to address page
-      res.redirect('/BASELINE/manual-card-address')
-    }
+router.post('/BASELINE/benefits-answer', function (req, res) {
 
-  })
+  // Make a variable and give it the value from 'live-scotland'
+  var Benefits = req.session.data['which-benefits']
 
-  // Partner has a NINO Branching
-  router.post('/BASELINE/partner-nino-answer', function (req, res) {
-    // Get the answer from session data
-    // The name between the quotes is the same as the 'name' attribute on the input elements
-    // However in JavaScript we can't use hyphens in variable names
+  // Check whether the variable matches a condition
+  if (Benefits == "Universal Credit"){
+     // Send user to ineligible page
+    res.redirect('/BASELINE/children-u4')
+  }
+  else {
+   // Send user to next page
+    res.redirect('/BASELINE/children-u4')
+  }
 
-    let partnernino = req.session.data['partner-nino']
+})
 
-    if (partnernino === 'false') {
-      res.redirect('/BASELINE/manual-card-address')
-    } else {
-      res.redirect('/BASELINE/partner-name')
-    }
-  })
 
-  // check your answers
-  router.get('/BASELINE/check-your-answers', function (req, res) {
+  // CHILDREN
 
-    var CheckAnswers = req.query.CheckAnswers
+  router.post('/BASELINE/children-u4', function (req, res) {
+    if (req.session.data['children-u4'] === '0') {
+      return res.redirect('/BASELINE/are-you-pregnant')
+    } 
 
-    res.render('BASELINE/check-your-answers',{CheckAnswers})
+    return res.redirect('/BASELINE/child1-date-of-birth')
   })
 }
+
+
 
 module.exports = {
   attachRoutes
