@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
- What is your address?
+Where should we send your prepaid card?
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,7 +13,7 @@
   },
   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
 }) }}
-  <a class="govuk-back-link" href="live-with-partner">Back</a>
+  <a class="govuk-back-link" href="#">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -21,29 +21,31 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form class="form" action="/BASELINE/check-your-answers" method="post">
+      <form class="form" action="mobile-number" method="post">
 
        <fieldset class="govuk-fieldset">
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+   <h1 class="govuk-heading-l" style="color: red;">*Content under review*</h1>
     <h1 class="govuk-fieldset__heading">
-      What is your address?
+      What's your address?
     </h1>
   </legend>
 
-  <p>
- This is the address you would like your prepaid card to be sent to. It does not have to be your home address.
-</p>
+  <span id="national-insurance-number-hint" class="govuk-hint govuk-!-margin-bottom-6">
+ You must use the same address for all the benefits you claim. 
+</span>
 
-  <div class="govuk-form-group">
+   <div class="govuk-form-group">
     <label class="govuk-label" for="address-line-1">
-      Building and street
+      House number or name
       <span class="govuk-visually-hidden">line 1 of 2</span>
     </label>
+    
     <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" value="{{ data['address-line-1'] }}"/>
   </div>
 
   <div class="govuk-form-group">
-    <label class="govuk-label" for="address-line-2">
+    <label class="govuk-label" for="address-line-2">Street
       <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
     </label>
     <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" value="{{ data['address-line-2'] }}"/>
@@ -64,6 +66,21 @@
   </div>
 
 </fieldset>
+
+<div class="govuk-inset-text">
+  Your prepaid card will be sent to this address.
+</div>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Why do we need this? 
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    To confirm your identity and eligibility.
+  </div>
+</details>
 
         <button class="govuk-button">Continue</button>
 
