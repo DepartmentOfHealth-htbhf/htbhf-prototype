@@ -13,16 +13,20 @@
   },
   html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
 }) }}
-   <a class="govuk-back-link" href="which-user">Back</a>
+   <a class="govuk-back-link" href="#">Back</a>
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l" style="color: red;">*Content under review*</h1>
+      <h1 class="govuk-heading-xl">What's your name?</h1>
 
-      <h1 class="govuk-heading-xl">What is your name?</h1>
-      <p>Tell us your full legal name as it appears on your passport or other benefit claims.</p>
+      <span id="national-insurance-number-hint" class="govuk-hint">
+ Use your full name as it appears on your passport or any benefit claims. 
+</span>
+      
 
       <form class="form" action="national-insurance-number" method="post">
 
@@ -40,6 +44,17 @@
   <input class="govuk-input" id="last-name" name="last-name" type="text" value="{{ data['last-name'] }}" >
 </div>
 
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+     Why do we need this?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+  To confirm your identity and eligibility. Your name will also appear on your prepaid card.
+  </div>
+</details>
 
 
         <button class="govuk-button">Continue</button>
