@@ -10,7 +10,7 @@ router.post('/BASELINE/where-live-answer', function (req, res) {
   var whereLive = req.session.data['where-live']
 
   // Check whether the variable matches a condition
-  if (whereLive == "Scotland"){
+  if (whereLive == "Yes"){
      // Send user to ineligible page
     res.redirect('/BASELINE/not-eligible-scotland')
   }
