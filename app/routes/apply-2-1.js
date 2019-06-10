@@ -35,7 +35,7 @@ router.post('/apply-2-1/get-vouchers-answer', function (req, res) {
   }
   else {
    // Send user to transfer journey
-    res.redirect('/apply-2-1/transfer-2-1/did-you-get-the-letter')
+    res.redirect('/apply-2-1/do-you-live-in-scotland')
   }
 
 })
@@ -49,7 +49,7 @@ router.post('/apply-2-1/where-live-answer', function (req, res) {
   var whereLive = req.session.data['where-live']
 
   // Check whether the variable matches a condition
-  if (whereLive == "Scotland"){
+  if (whereLive == "Yes"){
      // Send user to ineligible page
     res.redirect('/apply-2-1/not-eligible-scotland')
   }
