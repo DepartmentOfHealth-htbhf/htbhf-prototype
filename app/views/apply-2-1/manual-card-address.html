@@ -26,19 +26,20 @@ Where should we send your prepaid card?
        <fieldset class="govuk-fieldset">
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
     <h1 class="govuk-fieldset__heading">
-      What is your address?
+      What's your address?
     </h1>
   </legend>
 
-  <p class="govuk-body">
- This should be the same address you use for any other benefits you claim. 
-</p>
+  <span id="national-insurance-number-hint" class="govuk-hint govuk-!-margin-bottom-6">
+ You must use the same address for all the benefits you claim. 
+</span>
 
-  <div class="govuk-form-group">
+   <div class="govuk-form-group">
     <label class="govuk-label" for="address-line-1">
       House number or name
       <span class="govuk-visually-hidden">line 1 of 2</span>
     </label>
+    
     <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" value="{{ data['address-line-1'] }}"/>
   </div>
 
@@ -65,6 +66,10 @@ Where should we send your prepaid card?
 
 </fieldset>
 
+<div class="govuk-inset-text">
+  Your prepaid card will be sent to this address.
+</div>
+
 <details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
@@ -72,7 +77,7 @@ Where should we send your prepaid card?
     </span>
   </summary>
   <div class="govuk-details__text">
-    This helps us to confirm your identity and check if you are eligible for this scheme. It will also tell us where to send your prepaid card.
+    To confirm your identity and eligibility.
   </div>
 </details>
 

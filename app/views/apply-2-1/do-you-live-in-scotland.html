@@ -24,34 +24,29 @@
     <div class="govuk-grid-column-two-thirds">
 
 
- <form action="/apply-2-1/where-live-answer" method="post" class="form">
+ <form action="where-live-answer" method="post" class="form">
 
- <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
         Do you live in Scotland?
       </h1>
     </legend>
-     <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="where-live" name="where-live" type="radio" value="Scotland">  
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-live" name="where-live" type="radio" value="Yes">  
         <label class="govuk-label govuk-radios__label" for="where-live">
           Yes
-        </label>
-      </div>
-    <div class="govuk-radios">
+        </label></div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="where-live" name="where-live" type="radio" value="England" {{ checked("where-live", "No") }}>
+        <input class="govuk-radios__input" id="where-live" name="where-live" type="radio" value="No" {{ checked("where-live", "No") }}>
         <label class="govuk-label govuk-radios__label" for="where-live">
           No
-        </label>
-      </div>
-
-     
+        </label></div>
     </div>
   </fieldset>
 </div>
-
 
         <button class="govuk-button">Continue</button>
 

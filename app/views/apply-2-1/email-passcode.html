@@ -20,16 +20,15 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Enter your security code</h1>
 
-      <h1 class="govuk-heading-xl">Enter your email confirmation code</h1>
+  <p>A security code has been sent to <strong>{{ data['email'] }}</strong>. You should get it within 5 minutes. You only need to use this code once.</p>
 
-  <p>We have emailed a code to <strong>{{ data['email'] }}</strong>. You should get it within 5 minutes. You only need to use this code once.</p>
-
-      <form class="form" action="code-accepted" method="post">
+      <form class="form" action="check-your-answers" method="post">
 
         <div class="govuk-form-group">
            <label class="govuk-label" for="national-insurance-number">
-    Email confirmation code
+    Email security code
   </label>
   <span id="national-insurance-number-hint" class="govuk-hint">
     For example, 123456
@@ -40,11 +39,11 @@
 <details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      I did not get an email confirmation code
+      I did not get an email security code
     </span>
   </summary>
   <div class="govuk-details__text">
-    It can take up to 5 minutes to receive an email with your code. If you have not got a code after 5 minutes, we can send you a new one. <a href="#">Send me a new code</a>
+    It can take up to 5 minutes to receive an email with your code. If you have not got a code after 5 minutes, you can <a href="#">ask for a new one</a>.
   </div>
 </details>
 
