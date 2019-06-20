@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Where should we send your prepaid card?
+What's your address?
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,7 +25,6 @@ Where should we send your prepaid card?
 
        <fieldset class="govuk-fieldset">
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-   <h1 class="govuk-heading-l" style="color: red;">*Content under review*</h1>
     <h1 class="govuk-fieldset__heading">
       What's your address?
     </h1>
@@ -65,22 +64,13 @@ Where should we send your prepaid card?
     <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" value="{{ data['address-postcode'] }}"/>
   </div>
 
-</fieldset>
-
-<div class="govuk-inset-text">
-  Your prepaid card will be sent to this address.
+  <div class="govuk-inset-text">
+  We need this to confirm your identity and eligibility. We'll send your prepaid card to this address.
 </div>
 
-<details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Why do we need this? 
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    To confirm your identity and eligibility.
-  </div>
-</details>
+</fieldset>
+
+
 
         <button class="govuk-button">Continue</button>
 

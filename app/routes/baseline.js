@@ -23,23 +23,6 @@ router.post('/BASELINE/where-live-answer', function (req, res) {
 
 
 
-  // ID verification APPLY
-  router.post('/BASELINE/choose-channel-answer', function (req, res) {
-    // Get the answer from session data
-    // The name between the quotes is the same as the 'name' attribute on the input elements
-    // However in JavaScript we can't use hyphens in variable names
-
-    let channelyes = req.session.data['verify']
-
-    if (channelyes === 'false') {
-      res.redirect('/BASELINE/email-passcode')
-    } else {
-      res.redirect('/BASELINE/mobile-passcode')
-    }
-  })
-
-
-
  //Benefits
 
 router.post('/BASELINE/benefits-answer', function (req, res) {

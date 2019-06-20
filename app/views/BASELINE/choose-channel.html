@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  How do you want to confirm your identity?
+  We're sending you a code
 {% endblock %}
 
 {% block beforeContent %}
@@ -24,53 +24,48 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-  <form action="/BASELINE/choose-channel-answer" method="post" class="form">
+  <form action="mobile-passcode" method="post" class="form">
 
  <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-        How do you want to confirm your identity?
+        We're sending you a code
       </h1>
     </legend>
+
+    <span id="dob-hint" class="govuk-hint">
+      Select how you would like to receive it
+    </span>
+   
     <div class="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="verify" name="verify" type="radio" value="true">
         <label class="govuk-label govuk-radios__label govuk-label--s" for="channel-yes">
-          Send me a text message 
+          Text 
         </label>
-         <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">
-          A security code will be sent to your mobile telephone number
-        </span>
+        
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="verify" name="verify" type="radio" value="false">
         <label class="govuk-label govuk-radios__label govuk-label--s" for="channel-no">
-          Send me an email 
+          Email 
         </label>
-         <span id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
-          A security code will be sent to your email address
-        </span>
+         
       </div>
     </div>
+
+      <div class="govuk-inset-text">
+    We need this to confirm your identity and to prevent fraud.
+  </div>
   </fieldset>
+
+   <button class="govuk-button">Continue</button>
 </div>
 
 
-<details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-     Why do we need this?
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    To confirm your identity and prevent fraud.
-  </div>
-</details>
 
-
-
-        <button class="govuk-button">Continue</button>
+       
 
       </form>
 
