@@ -31,7 +31,7 @@
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-heading-l" style="color: red;">*Content with legal/policy team*</h1>
       <h1 class="govuk-fieldset__heading">
-        Read and agree to the terms and conditions
+        Terms and conditions
       </h1>
     </legend>
 
@@ -83,12 +83,21 @@
 
 
 <h3 class="govuk-heading-m">Now send your application</h3>
-        <p>By submitting this application you're confirming that you've read and agree to comply with these terms and conditions.</p>
+
+    <div class="govuk-checkboxes" data-module="checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional-1">
+        <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
+        <p>I confirm that I've read and comply with these terms and conditions.</p>
+        
+        </label>
+      </div>
+    </div>
   </fieldset>
 </div>
 
 
-        <button class="govuk-button">Accept and send</button>
+        <button class="govuk-button">Send</button>
 
       </form>
 
