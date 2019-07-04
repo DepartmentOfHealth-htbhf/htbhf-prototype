@@ -31,7 +31,7 @@ router.get('/install/:page', function (req, res) {
   redirectMarkdown(req.params.page, res)
   var doc = fs.readFileSync(path.join(__dirname, '/documentation/install/', req.params.page + '.md'), 'utf8')
   var html = marked(doc)
-  res.render('install_template', {'document': html})
+  res.render('install_template', { 'document': html })
 })
 
 // Redirect to the zip of the latest release of the Prototype Kit on GitHub
@@ -52,7 +52,7 @@ router.get('/examples/template-data', function (req, res) {
   res.render('examples/template-data', { 'name': 'Foo' })
 })
 
-// Branching original
+// Branching
 router.post('/examples/branching/over-18-answer', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
@@ -66,8 +66,6 @@ router.post('/examples/branching/over-18-answer', function (req, res) {
     res.redirect('/docs/examples/branching/over-18')
   }
 })
-
-
 
 module.exports = router
 
