@@ -31,17 +31,25 @@
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-heading-l" style="color: red;">*Content under review*</h1>
       <h1 class="govuk-fieldset__heading">
-        What are your children's dates of birth?
+        Enter your children's dates of birth
       </h1>
     </legend>
-         <span id="dob-hint" class="govuk-hint">
-      For example, 31 3 2018
-    </span>
+        
     
 
     {% for i in range(0, data['children-u4']) -%}
-    <p class="govuk-body govuk-!-font-weight-bold">
-          Child's date of birth</p>
+     <div class="govuk-form-group">
+  <label class="govuk-label" for="first-name">
+    First or given name
+  </label>
+  <input class="govuk-input" id="first-name" name="first-name" type="text" value="{{ data['first-name'] }}" >
+</div>
+    <label class="govuk-label" for="national-insurance-number">
+    Date of birth
+  </label>
+  <span id="national-insurance-number-hint" class="govuk-hint">
+    For example, 31 3 2018
+  </span>
       <div class="govuk-date-input" id="dob">
         <div class="govuk-date-input__item">
           <div class="govuk-form-group">
@@ -68,7 +76,7 @@
           </div>
         </div>
       </div>
-      <hr class="govuk-section-break govuk-section-break--m">
+       <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
     {%- endfor %}
 
 
@@ -77,7 +85,7 @@
 </div>
 
 <div class="govuk-inset-text">
-     We need this to confirm your identity and to prevent fraud.
+     Children’s names will not be stored or shared. We need their dates of birth to confirm your identity and to prevent fraud.
   </div>
 
 

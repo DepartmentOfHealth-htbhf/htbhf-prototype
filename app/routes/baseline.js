@@ -22,6 +22,25 @@ router.post('/BASELINE/where-live-answer', function (req, res) {
 })
 
 
+//yes no kids
+
+router.post('/BASELINE/do-you-have-kids-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'live-scotland'
+  var kidsYes = req.session.data['do-you-have-kids']
+
+  // Check whether the variable matches a condition
+  if (kidsYes == "Yes"){
+     // Send user to ineligible page
+    res.redirect('/BASELINE/children-u4')
+  }
+  else {
+   // Send user to next page
+    res.redirect('/BASELINE/are-you-pregnant')
+  }
+
+})
+
 
  //Benefits
 
@@ -45,7 +64,7 @@ router.post('/BASELINE/benefits-answer', function (req, res) {
 
   // CHILDREN
 
-  router.post('/BASELINE/children-u4', function (req, res) {
+  router.post('/BASELINE/children-u4-answer', function (req, res) {
     if (req.session.data['children-u4'] === '0') {
       return res.redirect('/BASELINE/are-you-pregnant')
     } 
