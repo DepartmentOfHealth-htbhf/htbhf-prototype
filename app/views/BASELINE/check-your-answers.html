@@ -61,23 +61,9 @@
           </dd>
         </div>
 
-          <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
-            Which benefits are you on?
-          </dt>
-          <dd class="app-check-your-answers__answer">
-           {{ data['benefits'] }}
-          </dd>
-          <dd class="app-check-your-answers__change">
-            <a href="which-benefits">
-              Change<span class="govuk-visually-hidden"> benefits</span>
-            </a>
-          </dd>
-        </div>
-
          <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Are you pregnant?
+            Pregnant?
           </dt>
           <dd class="app-check-your-answers__answer">
            {{ data['pregnant'] }}
@@ -189,19 +175,38 @@
         About your children
       </h2>
 
+
+
        <dl class="app-check-your-answers app-check-your-answers--short">
+
+ <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+            Children of 3 years old or younger?
+          </dt>
+          <dd class="app-check-your-answers__answer">
+           {{ data['do-you-have-kids'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+            <a href="which-benefits">
+              Change<span class="govuk-visually-hidden"> benefits</span>
+            </a>
+          </dd>
+        </div>
+
         <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-            Date of birth
+            {% for i in range(0, data['children-u4']) -%}
+            Name <br>Date of birth <br><br>
+             {%- endfor %}
           </dt>
           <dd class="app-check-your-answers__answer">
             {% for i in range(0, data['children-u4']) -%}
-              <p>{{ data['c' + i + '-dob-day'] }} / {{ data['c' + i + '-dob-month'] }} / {{ data['c' + i + '-dob-year'] }}</p>
+              <p> {{ data['child-name'] }} <br> {{ data['c' + i + '-dob-day'] }} / {{ data['c' + i + '-dob-month'] }} / {{ data['c' + i + '-dob-year'] }}</p>
             {%- endfor %}
           </dd>
           <dd class="app-check-your-answers__change">
-            <a href="children-u4">
-              Change<span class="govuk-visually-hidden"> children under 4</span>
+            <a href="child1-date-of-birth">
+              Change<span class="govuk-visually-hidden"> enter childrens birth dates</span>
             </a>
           </dd>
         </div>

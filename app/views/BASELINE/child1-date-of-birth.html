@@ -29,7 +29,6 @@
    <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-      <h1 class="govuk-heading-l" style="color: red;">*Content under review*</h1>
       <h1 class="govuk-fieldset__heading">
         Enter your children's dates of birth
       </h1>
@@ -39,17 +38,23 @@
 
     {% for i in range(0, data['children-u4']) -%}
      <div class="govuk-form-group">
-  <label class="govuk-label" for="first-name">
-    First or given name
-  </label>
-  <input class="govuk-input" id="first-name" name="first-name" type="text" value="{{ data['first-name'] }}" >
-</div>
+
+      <a href="#" role="button" class="govuk-button govuk-button--secondary" style="float:right;">Remove</a>
+      <h4 class="govuk-heading-s">About your child</h4>
+
+       <label class="govuk-label" for="c{{i}}-child-name">First name</label>
+        <input class="govuk-input" id="c{{i}}-child-name" name="c{{i}}-child-name" type="text" value="{{ data['c{{i}}-child-name'] }}" >
+        
+      </div>
+
+
     <label class="govuk-label" for="national-insurance-number">
-    Date of birth
+    <strong>Date of birth</strong>
   </label>
   <span id="national-insurance-number-hint" class="govuk-hint">
     For example, 31 3 2018
   </span>
+
       <div class="govuk-date-input" id="dob">
         <div class="govuk-date-input__item">
           <div class="govuk-form-group">
