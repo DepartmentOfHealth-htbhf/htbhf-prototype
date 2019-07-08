@@ -201,7 +201,7 @@
           </dt>
           <dd class="app-check-your-answers__answer">
             {% for i in range(0, data['children-u4']) -%}
-              <p> {{ data['child-name'] }} <br> {{ data['c' + i + '-dob-day'] }} / {{ data['c' + i + '-dob-month'] }} / {{ data['c' + i + '-dob-year'] }}</p>
+              <p> {{ data['c' + i + '-child-name'] }} <br> {{ data['c' + i + '-dob-day'] }} / {{ data['c' + i + '-dob-month'] }} / {{ data['c' + i + '-dob-year'] }}</p>
             {%- endfor %}
           </dd>
           <dd class="app-check-your-answers__change">
