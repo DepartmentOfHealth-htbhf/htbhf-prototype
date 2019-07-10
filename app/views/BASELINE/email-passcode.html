@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Enter your email confirmation code
+  Enter your code
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,36 +20,25 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+    <h1 class="govuk-fieldset__heading">
+     Enter your code
+    </h1>
+  </legend>
 
-      <form class="form" action="email-address" method="post">
-<h1 class="govuk-heading-l" style="color: red;">*Content under review*</h1>
-      <h1 class="govuk-heading-xl">Enter your security code</h1>
-
-  <p>A security code has been sent to <strong>{{ data['email'] }}</strong>. You should get it within 5 minutes. You only need to use this code once.</p>
+  <p>We just sent a 6 digit code to <strong>{{ data['email'] }}</strong>. It may take a few minutes to arrive.</p>
+  <hr class="govuk-section-break govuk-section-break--m">
 
       <form class="form" action="check-your-answers" method="post">
 
         <div class="govuk-form-group">
            <label class="govuk-label" for="national-insurance-number">
-    Email security code
+    Code
   </label>
-  <span id="national-insurance-number-hint" class="govuk-hint">
-    For example, 123456
-  </span>
-  <input class="govuk-input govuk-input--width-10" id="email-passcode" name="email-passcode" type="text" aria-describedby="email-passcode" />
+  <input class="govuk-input govuk-input--width-10" id="mobile-passcode" name="mobile-passcode" type="text" aria-describedby="mobile-passcode" />
 </div>
 
-<details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      I did not get an email security code
-    </span>
-  </summary>
-  <div class="govuk-details__text">
-    It can take up to 5 minutes to receive an email with your code. If you have not got a code after 5 minutes, you can <a href="#">ask for a new one</a>.
-  </div>
-</details>
-
+<p><a href="choose-channel">Request a new code</a> if it does not arrive.</p>
 
 
         <button class="govuk-button">Confirm</button>

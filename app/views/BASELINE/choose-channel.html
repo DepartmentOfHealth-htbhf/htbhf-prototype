@@ -24,7 +24,7 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-  <form action="mobile-passcode" method="post" class="form">
+  <form action="/BASELINE/choose-channel-answer" method="post" class="form">
 
  <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
@@ -42,14 +42,15 @@
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="verify" name="verify" type="radio" value="true">
         <label class="govuk-label govuk-radios__label govuk-label--s" for="channel-yes">
-          Text 
+          Text <p class="govuk-body">{{ data['mobile-number'] }} <span class="govuk-body"><a href="mobile-number">Change</a> </span></p>
         </label>
         
       </div>
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="verify" name="verify" type="radio" value="false">
         <label class="govuk-label govuk-radios__label govuk-label--s" for="channel-no">
-          Email 
+          Email <p class="govuk-body">{{ data['email'] }} <span class="govuk-body"><a href="email-address">Change</a> </span></p>
+          
         </label>
          
       </div>
