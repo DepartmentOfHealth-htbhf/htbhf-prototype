@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What is your email address?
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+   <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+    <h1 class="govuk-fieldset__heading">
+      What's your email address?
+    </h1>
+  </legend>
+
+  <p class="govuk-body">If you claim any benefits you must use the same address registered with the benefits agency (DWP or HMRC).
+
+<hr class="govuk-section-break govuk-section-break--m">
+
+ <form class="form" action="choose-channel" method="post">
+
+  <div class="govuk-form-group">
+  <label class="govuk-label" for="email">
+    Email address
+  </label>
+  
+  <input class="govuk-input" id="email" name="email" type="text" aria-describedby="email-hint" autocomplete="email" spellcheck="false" value="{{ data['email'] }}">
+</div>
+
+
+  <div class="govuk-inset-text">
+    We need this to send notifications about your application and your prepaid card.
+  </div>
+
+
+
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

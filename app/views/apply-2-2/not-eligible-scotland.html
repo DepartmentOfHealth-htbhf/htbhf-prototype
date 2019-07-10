@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  You cannot apply if you live in Scotland
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">You cannot apply if you live in Scotland</h1>
+        <p class="govuk-body">
+          You can only apply for this scheme if you live in England, Wales or Northern Ireland. </p>
+
+          <p class="govuk-body">If you live in Scotland you can <a href="https://www.mygov.scot/best-start-grant-new/" class="govuk-link">apply for Best Start Foods</a>.
+        </p>
+      </div>
+    </div>
+ 
+{% endblock %}

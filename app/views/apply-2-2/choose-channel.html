@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  We're sending you a code
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+  <form action="/apply-2-2/choose-channel-answer" method="post" class="form">
+
+ <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        We're sending you a code
+      </h1>
+    </legend>
+
+    <span id="dob-hint" class="govuk-hint">
+      Select how you would like to receive it
+    </span>
+   
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="verify" name="verify" type="radio" value="true">
+        <label class="govuk-label govuk-radios__label govuk-label--s" for="channel-yes">
+          Text <p class="govuk-hint">{{ data['mobile-number'] }} <span class="govuk-body"><a href="mobile-number">change</a> </span></p>
+        </label>
+        
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="verify" name="verify" type="radio" value="false">
+        <label class="govuk-label govuk-radios__label govuk-label--s" for="channel-no">
+          Email <p class="govuk-hint">{{ data['email'] }} <span class="govuk-body"><a href="email-address">change</a> </span></p>
+          
+        </label>
+         
+      </div>
+    </div>
+
+      <div class="govuk-inset-text">
+    We need this to confirm your identity and to prevent fraud.
+  </div>
+  </fieldset>
+
+   <button class="govuk-button">Continue</button>
+</div>
+
+
+
+       
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

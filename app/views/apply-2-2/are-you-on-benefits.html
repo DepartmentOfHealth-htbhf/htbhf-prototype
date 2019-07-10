@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Are you on benefits?
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+ <form action="/apply-2-2/are-you-on-benefits-answer" method="post" class="form">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        Are you on benefits?
+      </h1>
+    </legend>
+    <div class="govuk-radios govuk-radios--inline">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="on-benefits" name="on-benefits" type="radio" value="Yes">  
+        <label class="govuk-label govuk-radios__label" for="on-benefits">
+          Yes
+        </label></div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="on-benefits" name="on-benefits" type="radio" value="No" {{ checked("on-benefits", "No") }}>
+        <label class="govuk-label govuk-radios__label" for="on-benefits">
+          No
+        </label></div>
+    </div>
+  </fieldset>
+</div>
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

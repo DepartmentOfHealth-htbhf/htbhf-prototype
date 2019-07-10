@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  Confirmation page example
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l" style="color: red;">*Untested with users*</h1>
+      <div class="govuk-panel govuk-panel--confirmation">
+        
+        <h1 class="govuk-panel__title">Your application is complete</h1>
+        <div class="govuk-panel__body">
+          You’re not eligible for a prepaid card
+        </div>
+      </div>
+
+       <p>Check your email for more information.</p>
+      
+
+    </div>
+  </div>
+
+{% endblock %}

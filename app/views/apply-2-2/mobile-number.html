@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+What is your mobile telephone number?
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="email-address" method="post">
+
+       <fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+    <h1 class="govuk-fieldset__heading">
+      What's your mobile telephone number?
+    </h1>
+  </legend>
+
+   <p class="govuk-body">If you claim any benefits you must use the same address registered with the benefits agency (DWP or HMRC).
+
+<hr class="govuk-section-break govuk-section-break--m">
+
+  <div class="govuk-form-group">
+  <label class="govuk-label" for="telephone-number">
+    UK mobile number
+  </label>
+  <input class="govuk-input govuk-input--width-20" id="mobile-number" name="mobile-number" type="text" autocomplete="tel" value="{{ data['mobile-number'] }}">
+</div>
+
+  <div class="govuk-inset-text">
+  We need this to prevent fraud and to contact you about your application if necessary.
+  </div>
+
+
+</fieldset>
+
+
+ 
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

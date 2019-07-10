@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What's your name?
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+   <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+       <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+    <h1 class="govuk-fieldset__heading">
+      What's your name?
+    </h1>
+  </legend>
+
+      <span id="national-insurance-number-hint" class="govuk-hint">
+ Use the name that is on your official documents, such as passport, driving licence, or any benefit claims
+</span>
+      
+
+      <form class="form" action="national-insurance-number" method="post">
+
+        <div class="govuk-form-group">
+  <label class="govuk-label" for="first-name">
+    First or given name
+  </label>
+  <input class="govuk-input" id="first-name" name="first-name" type="text" value="{{ data['first-name'] }}" >
+</div>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="last-name">
+    Last or family name
+  </label>
+  <input class="govuk-input" id="last-name" name="last-name" type="text" value="{{ data['last-name'] }}" >
+</div>
+
+<div class="govuk-inset-text">
+ We need this to confirm your identity and eligibility. Your name will also appear on your prepaid card.
+</div>
+
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  How many children age 3 or under do you have?
+{% endblock %}
+
+{% block beforeContent %}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+  <form action="/apply-2-2/children-u4-answer" method="post" class="form">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        How many children aged 3 years old or younger do you have?
+      </h1>
+    </legend>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="children-u4-2" name="children-u4" type="radio" value="1">
+        <label class="govuk-label govuk-radios__label" for="children-u4-2">
+          1
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="children-u4-3" name="children-u4" type="radio" value="2">
+        <label class="govuk-label govuk-radios__label" for="children-u4-3">
+          2
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="children-u4-4" name="children-u4" type="radio" value="3">
+        <label class="govuk-label govuk-radios__label" for="children-u4-4">
+          3
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="children-u4-4" name="children-u4" type="radio" value="4">
+        <label class="govuk-label govuk-radios__label" for="children-u4-4">
+          4
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="children-u4-4" name="children-u4" type="radio" value="5">
+        <label class="govuk-label govuk-radios__label" for="children-u4-4">
+          5
+        </label>
+      </div>
+    </div>
+  </fieldset>
+
+   <div class="govuk-inset-text">
+     We need this to confirm your identity and to prevent fraud.
+  </div>
+
+  <button class="govuk-button">Continue</button>
+
+</div>
+
+
+ 
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
