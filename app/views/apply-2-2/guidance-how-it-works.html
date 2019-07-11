@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Get money off milk, food and vitamins (Healthy Start)
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        Get money off milk, food and vitamins (Healthy Start)
+      </h1>
+
+      
+    <p class="govuk-body"> Contents</p>
+
+    <ul class="govuk-list">
+        
+         <li>
+          &#8212;  How it works
+        </li>
+        <li>
+         &#8212; <a href="guidance-eligibility">Eligibility</a>
+        </li>
+       <li>
+         &#8212; <a href="guidance-apply">Apply for Healthy Start</a>
+        </li>
+        </li>
+    </ul>
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+  </div>
+
+<div class="govuk-grid-column-two-thirds">  
+
+      <h2 class="govuk-heading-l">
+       How it works
+      </h2>
+
+      <p>If you’re pregnant or have a child of 3 or under you could get money off baby milk, fruit, vegetables and vitamins.</p>
+      <p>If you qualify you’ll be sent a card topped up with money that you can use in UK shops.</p>
+
+      <div class="govuk-inset-text">
+  If you live in Scotland you must apply for <a href="#" class="govuk-link">Best Start</a> instead
+</div>
+<p>You usually qualify if you also get certain benefits. If you’re not on benefits you could still qualify if you’re: 
+</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>under 18 and pregnant</li>
+  <li>under 20, pregnant and in full-time education</li>
+</ul>
+
+<p>You can get NHS advice on healthy eating during pregnancy, birth and parenthood at <a href ="https://www.nhs.uk/start4life">Start 4 Life</a>.
+</p>
+
+
+      <h3 class="govuk-heading-m">
+       If you’re already on the scheme
+      </h3>
+
+      <p>You will no longer receive vouchers. You need to apply for a Healthy Start prepaid card instead.</p>
+
+      <p>It only takes 5 minutes to apply online and you no longer need a signature from your midwife or health visitor.</p>
+
+      <p>Check the new rules about how to <a href="#"> use your card and when it will be topped up</a>.</p> 
+
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+      <ul class="govuk-list">
+  <li>
+    <a class="govuk-link" href="guidance-eligibility"><strong> > Next</strong> - Eligibility</a>
+  </li>
+</ul>
+
+    </div>
+
+
+
+  </div>
+{% endblock %}
