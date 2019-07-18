@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you have children who are 3 years old or younger?
+  Do you have any children under 4 years old?
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,9 +30,14 @@
   <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-        Do you have children who are 3 years old or younger?
+        Do you have any children under 4 years old?
       </h1>
     </legend>
+
+     <p class="govuk-body">Do not include children who are 4 years old or over.
+</p>
+
+<hr class="govuk-section-break govuk-section-break--m">
     <div class="govuk-radios govuk-radios--inline">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="do-you-have-kids" name="do-you-have-kids" type="radio" value="Yes">  

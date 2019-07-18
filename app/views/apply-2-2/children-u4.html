@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  How many children age 3 or under do you have?
+  How many children under 4 years old do you have?
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,9 +30,11 @@
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
-        How many children aged 3 years old or younger do you have?
-      </h1>
+        How many children under 4 years old do you have?
+        </h1>
     </legend>
+
+    <div class="govuk-radios">
       <div class="govuk-radios__item">
         <input class="govuk-radios__input" id="children-u4-2" name="children-u4" type="radio" value="1">
         <label class="govuk-label govuk-radios__label" for="children-u4-2">
