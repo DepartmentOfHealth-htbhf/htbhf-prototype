@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Report a change
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        Get money off milk, food and vitamins (Healthy Start)
+      </h1>
+
+      
+    <p class="govuk-body">Contents</p>
+
+    <ul class="govuk-list">
+        
+         <li>
+          &#8212; <a href="guidance-how-it-works">How it works</a>
+        </li>
+        <li>
+          &#8212; <a href="guidance-eligibility">Eligibility</a>
+        </li>
+         <li>
+         &#8212; <a href="guidance-what-you-get">What you’ll get</a>
+        </li>
+        <li>
+         &#8212; <a href="guidance-buy">What you can buy</a>
+        </li>
+        <li>
+         &#8212; <a href="guidance-using-your-card">Using your card</a>
+        </li>
+        <li>
+         &#8212; <a href="guidance-apply">Apply for Healthy Start</a>
+        </li>
+       <li>
+         &#8212; Report a change
+        </li>
+      </ul>
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+  </div>
+
+<div class="govuk-grid-column-two-thirds">  
+
+      <h2 class="govuk-heading-l">
+       Report a change
+      </h2>
+
+<p>You must always report a change in your circumstances or personal details. </p>      
+
+<p>Changes you need to report include:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>a birth</li> 
+  <li>a new pregnancy</li>
+  <li>change of name</li>
+  <li>change of contact details</li>
+</ul>
+ <hr class="govuk-section-break govuk-section-break--m">
+
+<p>This is to make sure you receive:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>the right amount of money</li>
+  <li>emails and letters about payments and changes</li>
+  <li>replacement cards</li>
+</ul>
+
+ <hr class="govuk-section-break govuk-section-break--m">
+<p>If you’re claiming any benefits you must also tell the <a href="https://www.gov.uk/report-benefits-change-circumstances"> benefit agencies</a> about these changes. </p>
+
+  <div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-warning-text__assistive">Warning</span>
+     If you deliberately do not report changes to the benefit agencies, you’re committing <a href="https://www.gov.uk/benefit-fraud"> benefit fraud</a>.
+  </strong>
+</div>
+
+ <h3 class="govuk-heading-m">Contact us</h3>
+
+<p>Report a change in your circumstances by calling 0300 330 7010 or email <a href="mailto:nhsbsa.applyforhealthystart@nhsbsa.nhs.uk?subject=Report a change"> nhsbsa.applyforhealthystart@nhsbsa.nhs.uk</a>.</p>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<ul class="govuk-list">
+  <li>
+    <a class="govuk-link" style="text-decoration: none; display: block; padding: 3px;" href="guidance-apply">
+      <span style="padding-right: 20px;">
+        <svg xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+              <path fill="currentColor" d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+            </svg>
+            </span>
+
+            <span><strong>Previous</strong></span><br>
+            <span style="margin-left:40px;">Apply for Healthy Start</span>
+
+          </a>
+  </li>
+</ul>
+    </div>
+
+ 
+
+  </div>
+{% endblock %}
