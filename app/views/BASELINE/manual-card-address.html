@@ -38,37 +38,43 @@ What's your address?
 
    <div class="govuk-form-group">
     <label class="govuk-label" for="address-line-1">
-      House number or name
-      <span class="govuk-visually-hidden">line 1 of 2</span>
+      Building and street <span class="govuk-visually-hidden">line 1 of 2</span>
     </label>
-    
-    <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" value="{{ data['address-line-1'] }}"/>
+    <span id="dob-hint" class="govuk-hint">
+      Enter the first line of your address
+    </span>
+    <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
   </div>
 
+
+
   <div class="govuk-form-group">
-    <label class="govuk-label" for="address-line-2">Street
+    <label class="govuk-label" for="address-line-2">
       <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
     </label>
-    <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" value="{{ data['address-line-2'] }}"/>
+    <input class="govuk-input" id="address-line-2" name="address-line-2" type="text">
   </div>
 
   <div class="govuk-form-group">
     <label class="govuk-label" for="address-town">
       Town or city
     </label>
-    <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" value="{{ data['address-town'] }}"/>
+    <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
+  </div>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="address-county">
+      County
+    </label>
+    <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
   </div>
 
   <div class="govuk-form-group">
     <label class="govuk-label" for="address-postcode">
       Postcode
     </label>
-    <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" value="{{ data['address-postcode'] }}"/>
+    <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
   </div>
-
-  <div class="govuk-inset-text">
-  We need this to confirm your identity and eligibility. We'll send your prepaid card to this address.
-</div>
 
 </fieldset>
 
