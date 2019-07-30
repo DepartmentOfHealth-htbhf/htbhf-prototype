@@ -1,0 +1,223 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Using your card
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        Get money off milk, food and vitamins (Healthy Start)
+      </h1>
+
+      
+    <p class="govuk-body"> Contents</p>
+
+    <ul class="govuk-list">
+        
+         <li>
+          &#8212; <a href="guidance-how-it-works">How it works</a>
+        </li>
+        <li>
+          &#8212; <a href="guidance-eligibility">Eligibility</a>
+        </li>
+         <li>
+         &#8212; <a href="guidance-what-you-get">What you’ll get</a>
+        </li>
+        <li>
+         &#8212; <a href="guidance-buy">What you can buy</a>
+        </li>
+        <li>
+         &#8212; Using your card
+        </li>
+        <li>
+         &#8212; <a href="guidance-apply">Apply for Healthy Start</a>
+        </li>
+       <li>
+         &#8212; <a href="guidance-report-a-change">Report a change</a>
+        </li>
+    </ul>
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+  </div>
+
+<div class="govuk-grid-column-two-thirds">  
+
+      <h2 class="govuk-heading-l">
+       Using your card
+      </h2>
+
+      <p>You’ll get a card in the post with instructions on how to activate and use it. It will be sent to you for free.</p>
+
+      <p>You’ll be given a 4-digit PIN to use when making payments and to check your balance. You will be able to change this so it’s easy to remember.</p>
+
+    <p>Once activated you can use your card straight away.</p>
+
+       <h3 class="govuk-heading-m">
+       Contactless payments
+      </h3>
+      
+      <p>The first time you make a payment you’ll have to use your PIN. After that you can make contactless payments up to £30.</p> 
+
+      <p>You’ll sometimes be asked to enter your PIN for contactless payments – this is for extra security.</p>
+
+      <p>You’ll have to enter your PIN for payments over £30.</p>
+
+      <h3 class="govuk-heading-m">
+       Contactless payments
+      </h3>
+
+      <p>You can check your balance at any cashpoint that allows this. </p>
+
+      <p>You cannot withdraw cash.</p>
+
+    <hr class="govuk-section-break govuk-section-break--l">
+
+      <h2 class="govuk-heading-l">
+       Where you can shop
+      </h2> 
+
+      <p>You can use your card in most places that sell milk, infant formula, fruit and vegetables. These include:</p>
+
+       <ul class="govuk-list govuk-list--bullet">
+        <li>corner shops</li>
+        <li>supermarkets</li>
+        <li>food co-ops</li>
+        <li>sweet shops</li>
+        <li>grocery shops including discount stores</li>
+        <li>greengrocers</li>
+        <li>market stalls</li>
+        <li>milk floats</li>
+        <li>food markets</li>
+        <li>petrol stations</li>
+        <li>pharmacies</li>
+        <li>newsagents and newsstands</li>
+        <li>hospital grocery shops</li>
+        <li>bakeries</li> 
+      </ul>
+
+      <p>They must display a Mastercard&#174; symbol.</p>
+
+      <div class="govuk-inset-text">
+         If you try to spend the money anywhere else the card will be declined.
+      </div>
+
+
+       <hr class="govuk-section-break govuk-section-break--l">
+
+      <h2 class="govuk-heading-l">
+       If your situation changes 
+      </h2>
+
+      <p>If there’s any money left on the card when your entitlement ends you have 16 weeks to spend it.</p> 
+
+      <p>If you do not spend it in this time you will not get a refund.</p> 
+
+      <p>The same applies if you cancel the card yourself.</p> 
+
+      <hr class="govuk-section-break govuk-section-break--l">
+
+      <h2 class="govuk-heading-l">
+       Reporting a card problem
+      </h2>
+
+      <h3 class="govuk-heading-m">
+       Lost or stolen cards
+      </h3>
+
+      <p>You are responsible for reporting your lost or stolen card as soon as possible.</p>
+
+      <p>To do this:</p>
+      <ul class="govuk-list govuk-list--bullet">
+
+        <li>call 0300 330 7010</li>
+        <li>select option 2</li>
+        <li>follow the instructions</li> 
+      </ul>
+
+      <p>It will be immediately blocked so that no one else can use it.</p>
+
+      <p>Any transactions made before the card is reported lost or stolen will be charged to your account.</p>
+       
+      <p>Look after your card – if you lose it too many times we may need to charge a replacement fee.</p>
+
+       <h3 class="govuk-heading-m">
+       Reporting activation problems
+      </h3>
+      <p>If you experience any problems activating or using your card call 0300 330 7010.</p>
+
+       <h3 class="govuk-heading-m">
+       If your card is used by someone else
+      </h3>
+
+     <p>You are responsible for all spending on your prepaid card even if someone else uses it.</p>
+     <p>If you see a transaction you do not recognise call 0300 330 7010 straight away.</p>
+
+
+    
+
+    
+
+    
+
+      
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<ul class="govuk-list">
+  <li>
+    <a class="govuk-link" style="text-decoration: none; display: block; padding: 3px;" href="guidance-buy">
+      <span style="padding-right: 20px;">
+        <svg xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+              <path fill="currentColor" d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+            </svg>
+            </span>
+
+            <span><strong>Previous</strong></span><br>
+            <span style="margin-left:40px;">What you can buy</span>
+
+          </a>
+  </li>
+</ul>
+
+<ul class="govuk-list">
+  <li>
+    <a class="govuk-link" style="text-decoration: none; display: block; padding: 3px;" href="guidance-apply">
+      <span style="padding-right: 20px;">
+        <svg xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+              <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+            </svg>
+            </span>
+
+            <span><strong>Next</strong></span><br>
+            <span style="margin-left:40px;">Apply for Healthy Start</span>
+
+          </a>
+  </li>
+</ul>
+
+
+    </div>
+
+  <div class="govuk-grid-column-one-third">
+
+
+    </div>
+
+  </div>
+{% endblock %}
