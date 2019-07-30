@@ -1,0 +1,179 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Privacy notice
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Privacy notice
+      </h1>
+
+
+   <p>The Apply for Healthy Start service is operated by the Department of Health and Social Care (DHSC).</p>
+
+    <p>DHSC is the data controller of your personal data (information). A data controller determines how and why data is processed. We need to process your data to operate the Apply for Healthy Start service.</p>
+
+    <p>You can read the <a href="https://www.gov.uk/government/organisations/department-of-health-and-social-care/about/personal-information-charter">DHSC personal data charter</a> for more information.</p>
+
+    <p>Our cookie notice explains how our service will interact with your device.</p>
+
+
+      <h2 class="govuk-heading-m">
+       What data we collect and why we need it 
+      </h2>
+
+<table class="govuk-table">
+  
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Your data</th>
+      <th scope="col" class="govuk-table__header">Why we need it</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Name</th>
+      <td class="govuk-table__cell">To check your eligibility and create your prepaid card account</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">National Insurance Number</th>
+      <td class="govuk-table__cell">To check your eligibility</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Date of birth</th>
+      <td class="govuk-table__cell">To check your eligibility and to create your prepaid card account</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Address</th>
+      <td class="govuk-table__cell">To check your eligibility and to send you your prepaid card</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Contact details</th>
+      <td class="govuk-table__cell">To create and activate your prepaid card account and to send you service updates</td>
+    </tr>
+  </tbody>
+</table>
+
+      <h2 class="govuk-heading-m">What we do with your data</h2>
+       <p>The data we collect may be shared with other relevant government departments, agencies and public bodies associated with the service.</p>
+
+       <p>It may also be shared with our technology suppliers, for example our hosting provider.</p>
+       <p>We will share your data if we are required to do s4o by law – for example, by a court order, or to prevent fraud or other crime.</p>
+       <p>We will not:</p>
+          <ul class="govuk-list govuk-list--bullet">
+          <li>sell or rent your data to third parties</li>
+          <li>share your data with third parties for marketing purposes</li>
+          </ul>
+
+       <h2 class="govuk-heading-m">Sharing your data with allpay</h2>  
+       
+       <p>Your prepaid money card will be provided by allpay Limited. For this reason we must share some of your data with them.</p>
+ 
+       <p>We share all your data with them except your National Insurance Number. This is so they can:</p>
+
+       <ul class="govuk-list govuk-list--bullet">
+          <li>confirm your identity and address</li>
+          <li>create and send your card or replacement cards</li>
+          <li>send you information about any service changes</li>
+        </ul>
+
+
+        <p>You should read <a href="https://www.allpay.net/privacy-statement/"> allpay's privacy statement</a> to find out what it does with your information.</p>
+
+        <h2 class="govuk-heading-m">How we protect your data and keep it secure</h2> 
+
+        <p>Your data will be stored on secure servers in the UK and the <a href="https://www.gov.uk/eu-eea">European Economic Area</a>.</p> 
+
+        <h2 class="govuk-heading-m">How long we keep your data</h2>
+        <p>We will only retain your personal data for as long as:</p>
+ 
+        <ul class="govuk-list govuk-list--bullet">
+          <li>we need it to deliver your payment via the Apply for Healthy Start service</li>
+          <li>the law requires us to</li>
+        </ul>
+        <p>We will delete your data after this.</p>
+
+        <h2 class="govuk-heading-m">Children’s privacy protection</h2> 
+        <p>We will not collect or store data about anyone under the age of 13. </p>
+
+        <h2 class="govuk-heading-m">Your rights</h2> 
+        <p>You have the right to:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>see what data we hold about you (a right of access request)</li> 
+          <li>ask us to stop using your data but keep it on record</li>
+          <li>have some or all of your data deleted</li> 
+          <li>have some or all of your data corrected</li>
+        </ul>
+
+        <p>If you have any of these requests, email the Information Asset Owner at <a href="mailto:nhsbsa.applyforhealthystart@nhsbsa.nhs.uk">nhsbsa.applyforhealthystart@nhsbsa.nhs.uk</a>.</p>
+
+        <p>If you ask us to delete your data you will no longer have access to Apply for Healthy Start service. This means your entitlement (money) will stop.</p>
+         
+        <p>You can apply for the <a href="https://www.healthystart.nhs.uk/healthy-start-vouchers/how-to-apply/">Healthy Start voucher scheme</a> instead if you choose.</p>
+
+        <h2 class="govuk-heading-m">Contact us or make a complaint</h2>
+
+        <p>Contact our Data Protection Officer if you:</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+
+          <li>have a question about anything in this privacy notice</li>
+          <li>think that your personal data has been misused or mishandled</li>
+        </ul>
+
+      <div style="border-left: 1px solid #bfc1c3; padding-left: 15px; margin-bottom: 30px;margin-top: 30px;"> 
+        <ul class="govuk-list">
+          <li>Data Protection Officer</li> 
+          <li>Department of Health and Social Care</li>
+          <li>1st Floor North</li>
+          <li>39 Victoria Street</li>
+          <li>London</li>
+          <li>SW1H 0EU</li>
+          <li>Email: <a href="mailto:Data_protection@dhsc.gov.uk">Data_protection@dhsc.gov.uk</a></li> 
+        </ul>
+      </div>
+
+      <p>You also have the right to make a complaint to the <a href="https://ico.org.uk/">Information Commissioner’s Office (ICO)</a>.</p>
+
+      <h2 class="govuk-heading-m">Independent advice on data protection and privacy</h2>
+
+      <p>For independent advice about data protection, privacy and data-sharing issues, you can contact:</p>
+
+       <div style="border-left: 1px solid #bfc1c3; padding-left: 15px; margin-bottom: 30px;margin-top: 30px;"> 
+        <ul class="govuk-list">
+          <li>The Information Commissioner</li>
+          <li>Wycliffe House</li>
+          <li>Water Lane</li>
+          <li>Wilmslow</li>
+          <li>Cheshire SK9 5AF</li>
+          <li>Telephone: 0303 123 1113</li>
+          <li>Website: <a href="https://ico.org.uk/">ico.org.uk</a></li>
+        </ul>
+      </div>
+
+
+    </div>
+
+  </div>
+{% endblock %}
