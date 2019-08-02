@@ -5,13 +5,12 @@ Where should we send your prepaid card?
 {% endblock %}
 
 {% block beforeContent %}
-{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
-
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {{ govukPhaseBanner({
   tag: {
     text: "beta"
   },
-  html: 'This is a new service - your <a href="../feedback" class="govuk-link">feedback</a> will help us to improve it.'
+  html: 'This is a new service – your <a class="govuk-link" href="../feedback">feedback</a> will help us to improve it.'
 }) }}
   <a class="govuk-back-link" href="#">Back</a>
 {% endblock %}
