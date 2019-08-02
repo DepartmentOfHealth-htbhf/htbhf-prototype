@@ -23,18 +23,18 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-   <form class="form" action="confirmation-success" method="post">
+   <form class="form" action="#" method="post">
 
    <div class="govuk-form-group">
   <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-      <h1 class="govuk-heading-l" style="color: red;">*Content with legal/policy team*</h1>
+      
       <h1 class="govuk-fieldset__heading">
         Terms and conditions
       </h1>
     </legend>
 
-    {% from "warning-text/macro.njk" import govukWarningText %}
+    {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
 {{ govukWarningText({
   text: "Your payment may be stopped and you could be asked to repay money if you do not comply with these terms.",

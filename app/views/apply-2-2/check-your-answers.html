@@ -16,7 +16,8 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
+ 
+ <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
         Check your answers
@@ -30,44 +31,44 @@
       <!--   * `app-check-your-answers--short` for short questions -->
       <!--   * `app-check-your-answers__questions-long` for long questions -->
       <!--   * none for single group of q&a -->
-      <dl class="app-check-your-answers app-check-your-answers--short">
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Do you live in Scotland?
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ data['where-live'] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="do-you-live-in-scotland">
               Change<span class="govuk-visually-hidden"> where do you live</span>
             </a>
           </dd>
         </div>
 
-         <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+         <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Date of birth
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ data['dob-day'] }} {{ data['dob-month'] }} {{ data['dob-year'] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="date-of-birth">
               Change<span class="govuk-visually-hidden"> date of birth</span>
             </a>
           </dd>
         </div>
 
-         <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+         <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Benefits?
           </dt>
-          <dd class="app-check-your-answers__answer">
+           <dd class="govuk-summary-list__value">
            {{ data['on-benefits'] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="are-you-on-benefits">
               Change<span class="govuk-visually-hidden"> benefits</span>
             </a>
@@ -75,14 +76,14 @@
         </div>
 
         {% if data['on-benefits'] === 'Yes' %}
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+         <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Which benefits are you on?
           </dt>
-          <dd class="app-check-your-answers__answer">
+           <dd class="govuk-summary-list__value">
            {{ data['benefits'] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+         <dd class="govuk-summary-list__actions">
             <a href="which-benefits">
               Change<span class="govuk-visually-hidden"> benefits</span>
             </a>
@@ -90,14 +91,14 @@
         </div>
         {% endif %}
 
-         <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Pregnant?
           </dt>
-          <dd class="app-check-your-answers__answer">
+           <dd class="govuk-summary-list__value">
            {{ data['pregnant'] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="are-you-pregnant">
               Change<span class="govuk-visually-hidden"> if you are pregnant</span>
             </a>
@@ -105,14 +106,14 @@
         </div>
 
 {% if data['pregnant'] === 'Yes' %}
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+         <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Baby's due date
           </dt>
-          <dd class="app-check-your-answers__answer">
+           <dd class="govuk-summary-list__value">
             {{ data['pregnant-dob-day'] }} {{ data['pregnant-dob-month'] }} {{ data['pregnant-dob-year'] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="are-you-pregnant">
               Change<span class="govuk-visually-hidden"> baby due date</span>
             </a>
@@ -121,14 +122,14 @@
 {% endif %}
 
 
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+         <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Name
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ data['first-name'] }} {{ data['last-name'] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="what-is-your-name">
               Change<span class="govuk-visually-hidden"> name</span>
             </a>
@@ -136,14 +137,14 @@
         </div>
 
 
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+         <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             National Insurance number
           </dt>
-          <dd class="app-check-your-answers__answer">
+           <dd class="govuk-summary-list__value">
             {{ data['national-insurance-number'] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="national-insurance-number">
               Change<span class="govuk-visually-hidden"> national insurance number</span>
             </a>
@@ -152,17 +153,17 @@
 
        
 
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+         <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Address
           </dt>
-          <dd class="app-check-your-answers__answer">
+          <dd class="govuk-summary-list__value">
             {{ data['address-line-1'] }}<br />
             {{ data['address-line-2'] }}<br />
             {{ data['address-town'] }}<br />
             {{ data['address-postcode'] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="manual-card-address">
               Change<span class="govuk-visually-hidden"> address</span>
             </a>
@@ -170,28 +171,28 @@
         </div>
       
 
-       <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Mobile telephone number
           </dt>
-          <dd class="app-check-your-answers__answer">
+           <dd class="govuk-summary-list__value">
             {{ data['mobile-number'] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="mobile-number">
               Change<span class="govuk-visually-hidden"> mobile number</span>
             </a>
           </dd>
         </div>
 
-          <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Email address
           </dt>
-          <dd class="app-check-your-answers__answer">
+           <dd class="govuk-summary-list__value">
             {{ data['email'] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="email-address">
               Change<span class="govuk-visually-hidden"> mobile number</span>
             </a>
@@ -206,34 +207,34 @@
 
 
 
-       <dl class="app-check-your-answers app-check-your-answers--short">
+       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
- <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+  <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             Children under 4 years old?
           </dt>
-          <dd class="app-check-your-answers__answer">
+           <dd class="govuk-summary-list__value">
            {{ data['do-you-have-kids'] }}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="do-you-have-kids">
               Change<span class="govuk-visually-hidden"> do you have kids</span>
             </a>
           </dd>
         </div>
 
-        <div class="app-check-your-answers__contents">
-          <dt class="app-check-your-answers__question">
+         <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
             {% for i in range(0, data['children-u4']) -%}
             Name <br>Date of birth <br><br>
              {%- endfor %}
           </dt>
-          <dd class="app-check-your-answers__answer">
+           <dd class="govuk-summary-list__value">
             {% for i in range(0, data['children-u4']) -%}
               <p> {{ data['c' + i + '-child-name'] }} <br> {{ data['c' + i + '-dob-day'] }} / {{ data['c' + i + '-dob-month'] }} / {{ data['c' + i + '-dob-year'] }}</p>
             {%- endfor %}
           </dd>
-          <dd class="app-check-your-answers__change">
+          <dd class="govuk-summary-list__actions">
             <a href="child1-date-of-birth">
               Change<span class="govuk-visually-hidden"> enter childrens birth dates</span>
             </a>
@@ -248,5 +249,4 @@
       </a>
 
     </div>
-  </div>
 {% endblock %}
