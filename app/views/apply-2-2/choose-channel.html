@@ -39,14 +39,14 @@
    
     <div class="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="verify" name="verify" type="radio" value="true">
+        <input class="govuk-radios__input" id="verify" name="verify" type="radio" value="true" {{ checked("pregnant", "true") }}>
         <label class="govuk-label govuk-radios__label govuk-label--s" for="channel-yes">
           Text <p class="govuk-hint">{{ data['mobile-number'] }} <span class="govuk-body"><a href="mobile-number">change</a> </span></p>
         </label>
         
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="verify" name="verify" type="radio" value="false">
+        <input class="govuk-radios__input" id="verify" name="verify" type="radio" value="false" {{ checked("pregnant", "false") }}>
         <label class="govuk-label govuk-radios__label govuk-label--s" for="channel-no">
           Email <p class="govuk-hint">{{ data['email'] }} <span class="govuk-body"><a href="email-address">change</a> </span></p>
           
