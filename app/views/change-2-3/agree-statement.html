@@ -1,0 +1,135 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Terms and conditions
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="../feedback">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+   <form class="form" action="confirmation-success" method="post">
+
+   <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="citizenship-conditional-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      
+      <h1 class="govuk-fieldset__heading">
+        Terms and conditions
+      </h1>
+    </legend>
+
+    {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{{ govukWarningText({
+  text: "Your payment may be stopped if you do not comply with these terms.",
+  iconFallbackText: "Warning"
+}) }}
+
+    <p>This agreement is between you and the Department of Health and Social Care (DHSC). No one else can enforce any of its terms.</p>
+    <p>It is governed by English and Welsh laws – any disputes will be dealt with by an English or Welsh court.</p>
+
+<h3 class="govuk-heading-m">Changing the terms</h3>
+<p>We may need to change these terms:</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>to reflect changes in law or best practice</li>
+      <li>if we introduce any new features to the service</li>
+    </ul>
+
+
+<p>We will send you details of changes by email at least 30 days before.</p>
+
+<p>If you do not accept the changes you must let us know before any changes take place. You will not be charged. If you do not we will assume you have accepted the new terms.</p>
+
+<p>If you do not accept the changes you will no longer be allowed to use the Apply for Healthy Start service or the card.</p>
+
+
+
+    <h3 class="govuk-heading-m">Submitting your application</h3>
+
+<p>You confirm that the information you’ve given is correct.</p> 
+<p>You understand and agree that the DHSC:</p>
+
+ <ul class="govuk-list govuk-list--bullet">
+        <li>can check with other relevant organisations associated with the service that the information you’ve given is correct</li>
+        <li>can stop your payments and ask you to repay the money if you apply for a prepaid card illegally</li>
+      </ul>
+
+  <h3 class="govuk-heading-m">Your personal information</h3>
+
+<p>If your circumstances or personal details change you must tell:</p>
+
+ <ul class="govuk-list govuk-list--bullet">
+        <li>the <a href="guidance-report-a-change" target="_blank">DHSC (link opens in a new tab)</a></li>
+        <li><a href="https://www.gov.uk/report-benefits-change-circumstances" target="_blank">any other benefit agencies (link opens in a new tab)</a> you claim from</li>
+      </ul>
+
+<p>You must also read our <a href="../privacy-notice" target="_blank">privacy notice (link opens in a new tab)</a>. This explains what happens to your information, where it will be stored and who it will be shared with.</p>    
+
+ <h3 class="govuk-heading-m">Using your card</h3>
+
+ <p>Money will be added to your card every 4 weeks. </p>
+
+  <p>You can only have a maximum of 16 weeks' money on the card. If you do not spend it in that time your payments will stop. They will start again once you start spending.</p>
+
+ <p>You understand that:</p>
+
+ <ul class="govuk-list govuk-list--bullet">
+        <li>you must only use your prepaid card to <a href="guidance-buy" target="_blank">buy permitted items (link opens in a new tab)</a></li>
+        <li>you’re responsible for all spending on your prepaid card even if someone else uses it</li>
+      </ul>
+<h3 class="govuk-heading-m">Lost or stolen cards</h3>
+
+<p>If you see a transaction you do not recognise or if your card is lost or stolen you must report it immediately. If not you may lose some of the money left on the card.</p>
+
+<p>To do this:</p>
+
+<ul class="govuk-list govuk-list--bullet">
+  <li>call 0300 330 7010</li>
+  <li>select option 2 and follow the instructions</li> 
+</ul> 
+
+<p>If you lose your card too many times you may be charged a replacement fee.</p>
+
+<p>Any transactions made before the card is reported lost or stolen will be charged to your account.</p>
+
+
+<h3 class="govuk-heading-m">Now send your application</h3>
+
+    <div class="govuk-checkboxes" data-module="checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="citizenship-conditional-1" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional-1">
+        <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-1">
+        <p>I confirm I have read and agree to comply with these terms and conditions.</p>
+        
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+        <button class="govuk-button">Send application</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

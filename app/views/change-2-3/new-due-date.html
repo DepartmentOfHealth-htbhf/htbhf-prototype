@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ When is your baby due?
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="../feedback">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <form class="form" action="check-your-answers" method="post">
+
+   <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="due-hint" role="group">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        When is your baby due?
+      </h1>
+    </legend>
+     <p class="govuk-body">This must 4 weeks or less than the first date you reported which was <br> <strong>1 December 2019</strong>. </p>
+    <span id="due-hint" class="govuk-hint">
+      For example, 31 3 1990
+    </span>
+    <div class="govuk-date-input" id="due">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="due-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="due-day" name="due-day" type="number" pattern="[0-9]*" value="{{ data['due-day'] }}"/>
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="due-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="due-month" name="due-month" type="number" pattern="[0-9]*" value="{{ data['due-month'] }}"/>
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="due-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="due-year" name="due-year" type="number" pattern="[0-9]*" value="{{ data['due-year'] }}"/>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+
+  <div class="govuk-inset-text">
+    You can only change this date once.
+  </div>
+
+
+
+
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

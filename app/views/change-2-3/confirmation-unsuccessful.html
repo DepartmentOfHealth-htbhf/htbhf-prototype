@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+  You’re no longer eligible for Healthy Start
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">You’re no longer eligible for Healthy Start</h1>
+      </div>
+
+      <p>We keep your details for 16 weeks. After this time you’ll need to <a href="guidance-apply"> apply for Healthy Start</a> again.</p>
+    
+      <a href="../feedback" role="button" class="govuk-button">Give feedback</a>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

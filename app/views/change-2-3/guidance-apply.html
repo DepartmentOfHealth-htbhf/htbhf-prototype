@@ -1,0 +1,126 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Apply for Healthy Start
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="../feedback">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">
+        Get money off milk, food and vitamins (Healthy Start)
+      </h1>
+
+      
+    <p class="govuk-body">Contents</p>
+
+    <ul class="govuk-list">
+        
+         <li>
+          &#8212; <a href="guidance-how-it-works">How it works</a>
+        </li>
+        <li>
+          &#8212; <a href="guidance-eligibility">Eligibility</a>
+        </li>
+         <li>
+         &#8212; <a href="guidance-what-you-get">What you’ll get</a>
+        </li>
+        <li>
+         &#8212; <a href="guidance-buy">What you can buy</a>
+        </li>
+        <li>
+         &#8212; <a href="guidance-using-your-card">Using your card</a>
+        </li>
+       <li>
+         &#8212; Apply for Healthy Start
+        </li>
+        <li>
+         &#8212; <a href="guidance-report-a-change">Report a change</a>
+        </li>
+      </ul>
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+  </div>
+
+<div class="govuk-grid-column-two-thirds">  
+
+      <h2 class="govuk-heading-l">
+       Apply for Healthy Start
+      </h2>
+
+<p>It only takes about 5 minutes to apply.</p>      
+
+<p>Before you apply you will need your:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>National Insurance number</li>
+  <li>baby’s due date if you’re pregnant</li>
+  <li>contact details which should match those registered with the benefits agencies (if you claim benefits)</li>
+  <li>mobile telephone number</li>
+  <li>email address</li>
+</ul>
+
+<a href="#" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+  Apply now
+  <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+    <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+  </svg>
+</a>
+
+<hr class="govuk-section-break govuk-section-break--l">
+
+<hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
+
+<hr class="govuk-section-break govuk-section-break--m">
+
+<ul class="govuk-list">
+  <li>
+    <a class="govuk-link" style="text-decoration: none; display: block; padding: 3px;" href="guidance-using-your-card">
+      <span style="padding-right: 20px;">
+        <svg xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+              <path fill="currentColor" d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+            </svg>
+            </span>
+
+            <span><strong>Previous</strong></span><br>
+            <span style="margin-left:40px;">Using your card</span>
+
+          </a>
+  </li>
+</ul>
+
+<ul class="govuk-list">
+  <li>
+    <a class="govuk-link" style="text-decoration: none; display: block; padding: 3px;" href="guidance-report-a-change">
+      <span style="padding-right: 20px;">
+        <svg xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+              <path fill="currentColor" d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+            </svg>
+            </span>
+
+            <span><strong>Next</strong></span><br>
+            <span style="margin-left:40px;">Report a change</span>
+
+          </a>
+  </li>
+</ul>
+
+    </div>
+
+ 
+
+  </div>
+{% endblock %}

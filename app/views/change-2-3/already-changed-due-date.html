@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+ You’ve already changed your due date
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="../feedback">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">You’ve already changed your due date</h1>
+        <p class="govuk-body">You can only change this date once.</p>
+
+         <hr class="govuk-section-break govuk-section-break--m">
+
+          <a href="../feedback" role="button" class="govuk-button">Give feedback</a>
+      </div>
+    </div>
+ 
+{% endblock %}

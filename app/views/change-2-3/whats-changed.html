@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What do you want to report?
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="../feedback">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+ <form action="whats-changed-answer" method="post" class="form">
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        What do you want to report?
+      </h1>
+    </legend>
+    <div class="govuk-radios govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whats-changed" name="whats-changed" type="radio" value="pregnancy">  
+        <label class="govuk-label govuk-radios__label" for="whats-changed">
+          Pregnancy
+        </label></div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whats-changed" name="whats-changed" type="radio" value="new-due-date" {{ checked("whats-changed", "No") }}>
+        <label class="govuk-label govuk-radios__label" for="whats-changed">
+          New due date
+        </label></div>
+    </div>
+  </fieldset>
+</div>
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
