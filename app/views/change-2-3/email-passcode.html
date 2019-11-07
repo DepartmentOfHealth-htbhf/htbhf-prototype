@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Enter your code
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="../feedback">feedback</a> will help us to improve it.'
+}) }}
+   <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+    <h1 class="govuk-fieldset__heading">
+     Enter your code
+    </h1>
+  </legend>
+
+  <p>We just sent a 6 digit code to <strong>{{ data['email'] }}</strong>. It may take a few minutes to arrive.</p>
+  <hr class="govuk-section-break govuk-section-break--m">
+
+      <form class="form" action="check-your-answers-email" method="post">
+
+        <div class="govuk-form-group">
+           <label class="govuk-label" for="national-insurance-number">
+    Code
+  </label>
+  <input class="govuk-input govuk-input--width-10" id="mobile-passcode" name="mobile-passcode" type="text" aria-describedby="mobile-passcode" />
+</div>
+
+<p><a href="choose-channel">Request a new code</a> if it does not arrive.</p>
+
+
+        <button class="govuk-button">Confirm</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+

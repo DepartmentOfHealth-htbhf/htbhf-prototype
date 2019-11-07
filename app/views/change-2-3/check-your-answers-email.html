@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="../feedback">feedback</a> will help us to improve it.'
+}) }}
+  <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+ 
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Check your answers
+      </h1>
+
+      <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+      <!--   * `app-check-your-answers--short` for short questions -->
+      <!--   * `app-check-your-answers__questions-long` for long questions -->
+      <!--   * none for single group of q&a -->
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+
+      
+
+          <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email address
+          </dt>
+           <dd class="govuk-summary-list__value">
+            {{ data['email'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="email-address">
+              Change<span class="govuk-visually-hidden"> mobile number</span>
+            </a>
+          </dd>
+        </div>
+
+
+      </dl>
+
+
+      <a class="govuk-button" href="agree-statement" role="button">
+        Continue
+      </a>
+
+    </div>
+{% endblock %}

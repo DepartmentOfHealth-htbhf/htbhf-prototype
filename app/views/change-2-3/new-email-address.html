@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What is your new email address?
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="../feedback">feedback</a> will help us to improve it.'
+}) }}
+   <a class="govuk-back-link" href="#">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+    <h1 class="govuk-fieldset__heading">
+      What's your new email address?
+    </h1>
+  </legend>
+
+ <form class="form" action="email-passcode" method="post">
+
+  <div class="govuk-form-group">
+  <label class="govuk-label" for="email">
+    New email address
+  </label>
+
+  
+  <input class="govuk-input" id="email" name="email" type="text" aria-describedby="email-hint" autocomplete="email" spellcheck="false" value="{{ data['email'] }}">
+</div>
+
+
+ <div class="govuk-inset-text">We're sending you a code to confirm your identity.</div>
+
+
+
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+
