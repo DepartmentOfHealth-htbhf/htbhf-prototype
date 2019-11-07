@@ -23,42 +23,42 @@
     <div class="govuk-grid-column-two-thirds">
 
 
-      <form class="form" action="check-your-answers-pregnancy" method="post">
+      <form class="form" method="post">
 
    <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset" aria-describedby="dob-hint" role="group">
+  <fieldset class="govuk-fieldset" aria-describedby="pregnancy-hint" role="group">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
       <h1 class="govuk-fieldset__heading">
         When is your baby due?
       </h1>
     </legend>
     <p class="govuk-body">You must be at least 10 weeks pregnant.</p>
-    <span id="dob-hint" class="govuk-hint">
+    <span id="pregnancy-hint" class="govuk-hint">
       For example, 31 3 1990
     </span>
-    <div class="govuk-date-input" id="dob">
+    <div class="govuk-date-input" id="pregnancy">
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="dob-day">
+          <label class="govuk-label govuk-date-input__label" for="pregnancy-day">
             Day
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" value="{{ data['dob-day'] }}"/>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="pregnancy-day" name="pregnancy-day" type="number" pattern="[0-9]*" value="{{ data['pregnancy-day'] }}"/>
         </div>
       </div>
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="dob-month">
+          <label class="govuk-label govuk-date-input__label" for="pregnancy-month">
             Month
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" value="{{ data['dob-month'] }}"/>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="pregnancy-month" name="pregnancy-month" type="number" pattern="[0-9]*" value="{{ data['pregnancy-month'] }}"/>
         </div>
       </div>
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
-          <label class="govuk-label govuk-date-input__label" for="dob-year">
+          <label class="govuk-label govuk-date-input__label" for="pregnancy-year">
             Year
           </label>
-          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" value="{{ data['dob-year'] }}"/>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="pregnancy-year" name="pregnancy-year" type="number" pattern="[0-9]*" value="{{ data['pregnancy-year'] }}"/>
         </div>
       </div>
     </div>

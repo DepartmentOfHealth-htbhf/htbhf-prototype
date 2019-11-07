@@ -24,20 +24,50 @@ router.post('/change-2-3/where-live-answer', function (req, res) {
 //What do you want to report?
 
 router.post('/change-2-3/whats-changed-answer', function (req, res) {
-
   // Make a variable and give it the value from 'whats-changed'
   var whatsChanged = req.session.data['whats-changed']
 
   // Check whether the variable matches a condition
-  if (whatsChanged == "pregnancy"){
+  if (whatsChanged.includes('pregnancy')){
      // Send user to ineligible page
     res.redirect('/change-2-3/due-date')
   }
-  else {
+  else if (whatsChanged.includes('new-email')){
    // Send user to next page
-    res.redirect('/change-2-3/new-due-date')
+    res.redirect('/change-2-3/new-email-address')
+  }
+  else {
+    res.redirect('/change-2-3/new-mobile-number')
   }
 
+})
+
+router.post('/change-2-3/due-date', function (req, res) {
+  // Make a variable and give it the value from 'whats-changed'
+  var whatsChanged = req.session.data['whats-changed']
+  // Check whether the variable matches a condition
+  if (whatsChanged.includes('new-email')){
+   // Send user to next page
+    return res.redirect('/change-2-3/new-email-address')
+  }
+  if (whatsChanged.includes('new-mobile')){
+    return res.redirect('/change-2-3/new-mobile-number')
+  }
+  return res.redirect('/change-2-3/check-your-answers')
+})
+
+router.post('/change-2-3/new-email-address', function (req, res) {
+  res.redirect('/change-2-3/email-passcode')
+})
+
+router.post('/change-2-3/email-passcode', function (req, res) {
+  // Make a variable and give it the value from 'whats-changed'
+  var whatsChanged = req.session.data['whats-changed']
+  // Check whether the variable matches a condition
+  if (whatsChanged.includes('new-mobile')){
+    return res.redirect('/change-2-3/new-mobile-number')
+  }
+  return res.redirect('/change-2-3/check-your-answers')
 })
 
 // ID verification APPLY
