@@ -30,20 +30,53 @@
       <dl class="govuk-summary-list govuk-!-margin-bottom-9">
 
       
-
+{% if data['pregnancy-day'] %}
          <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Baby's due date
           </dt>
            <dd class="govuk-summary-list__value">
-            {{ data['due-day'] }} {{ data['due-month'] }} {{ data['due-year'] }}
+            {{ data['pregnancy-day'] }} {{ data['pregnancy-month'] }} {{ data['pregnancy-year'] }}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a href="#">
+            <a href="due-date">
               Change<span class="govuk-visually-hidden"> baby due date</span>
             </a>
           </dd>
         </div>
+{% endif %}
+
+{% if data['email'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Email address
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['email'] }}
+           </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="new-email-address">
+              Change<span class="govuk-visually-hidden"> mobile number</span>
+            </a>
+          </dd>
+         </div>
+{% endif %}
+
+{% if data['mobile-number'] %}
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Mobile telephone number
+            </dt>
+             <dd class="govuk-summary-list__value">
+              {{ data['mobile-number'] }}
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a href="new-mobile-number">
+                Change<span class="govuk-visually-hidden"> mobile number</span>
+              </a>
+            </dd>
+          </div>
+{% endif %}
 
 
       </dl>
