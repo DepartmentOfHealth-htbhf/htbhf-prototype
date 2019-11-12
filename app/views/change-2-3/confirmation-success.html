@@ -13,20 +13,26 @@
     <div class="govuk-grid-column-two-thirds">
       <div class="govuk-panel govuk-panel--confirmation">
         
-        <h1 class="govuk-panel__title">We’ve updated your details</h1>
+        <h1 class="govuk-panel__title">We’ve updated your details</h1> 
       </div>
 
       <h2 class="govuk-heading-m">What happens next</h2>
 
+{% if data['pregnancy-day'] %}
+      <p><a href="guidance-what-you-get">You’ll get £3.10 a week for your pregnancy</a></p>
+{% endif %} 
+
         <p>We’ve sent you an email with more information.</p>
 
-         <p>If you did not request any changes:</p>
+        <p>If your situation has changed or you think a mistake has been made:</p>
 
           <ul class="govuk-list govuk-list--bullet">
           <li>call 0300 330 7010</li>
           <li>select option 3</li>
         </ul>
-        <a href="../feedback" role="button" class="govuk-button">Give feedback</a>
+        
+       <h2 class="govuk-heading-m">Give feedback</h2> 
+     <p><a href="../feedback"> What did you think of this service?</a> (takes 30 seconds).</p> 
 
     </div>
   </div>
